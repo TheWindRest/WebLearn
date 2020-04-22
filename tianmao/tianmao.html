@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天猫</title>
+		<script src="../js/jQuery JavaScript Library v3.4.1.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			body {
+				font-size: 12px;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			a {
+				color: #999;
+			}
+			.redColor{
+				color: #c40000 !important;
+			}
+			/*导航栏*/
+			nav.top {
+				background-color: #f2f2f2;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid #e7e7e7;
+			}
+			nav.top span,
+			nav.top a {
+				color: #999;
+				margin: 0px 10px;
+			}
+			nav.top a:hover {
+				color: #c40000;
+				text-decoration: none;
+			}
+			/*搜索*/
+			div.searchDiv {
+				background-color: #c40000;
+				width: 400px;
+				margin: 50px auto;
+				padding: 1px;
+				height: 40px;
+				display: block;
+			}
+			div.searchDiv input {
+				width: 275px;
+				border: 1px solid transparent;
+				height: 36px;
+				margin: 1px;
+				padding-left: 4px;
+				outline: none;
+			}
+			div.searchDiv button {
+				width: 110px;
+				border: 1px solid transparent;
+				background-color: #c40000;
+				color: white;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			div.searchBelow {
+				margin-top: 3px;
+				margin-left: -20px;
+			}
+			div.searchBelow span {
+				color: #999;
+			}
+			div.searchBelow a {
+				padding: 0px 20px;
+			}
+			img.logo {
+				position: absolute;
+				left: 0px;
+				top: 30px;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="top">
+			<a href="#nowhere">
+				<span class="glyphicon glyphicon-home redColor"></span>
+				天猫首页
+			</a>
+			<span>喵，欢迎来天猫</span>
+			<a href="#nowhere">请登录</a>
+			<a href="#nowhere">免费注册</a>
+			<span class="pull-right">
+				<a href="forebought">我的订单</a>
+				<a href="forecart">
+					<span class="glyphicon glyphicon-shopping-cart  redColor"></span>
+					购物车<strong>0</strong>件
+				</a>
+			</span>
+		</nav>
+
+		<div>
+			<a href="#nowhere">
+				<img class="logo" src="https://how2j.cn/tmall/img/site/logo.gif" id="logo">
+			</a>
+			<div class="searchDiv">
+				<input type="text" placeholder="时尚男鞋" name="keyword">
+				<button class="searchButton" type="submit">搜索</button>
+				<div class="searchBelow">
+					<span> <a href="#nowhere"> 平衡车 </a> <span>|</span></span> 
+					<span> <a href="#nowhere"> 扫地机器人 </a> <span>|</span></span> 
+					<span> <a href="#nowhere"> 原汁机 </a> <span>|</span></span> 
+					<span> <a href="#nowhere"> 冰箱 </a></span>
+				</div>
+			</div>
+		</div>
+		<div style="height:500px"></div>
+	</body>
+</html>
