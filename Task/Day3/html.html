@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>去掉字符串中最后一个指定字符</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<script>
+			var str = " hello world ni hao ma ";
+			function removeLastChar(str, char)
+			{
+				if(typeof str !== 'string')
+				{
+					throw new Error('不是字符串');
+				}
+
+				let index = str.lastIndexOf(char);
+				return str.substring(0, index) + str.substring(index + 1, str.length);
+			}
+
+			console.log(removeLastChar(str, 'o'));
+		</script>
+	</body>
+</html>
