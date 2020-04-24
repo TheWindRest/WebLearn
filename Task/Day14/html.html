@@ -5,30 +5,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>第14天</title>
 		<style>
-			.content {
-				width: 100px;
-				height: auto;
+			body {
+				margin: 0px;
+				border: 0px;
+				padding: 0px;
+			}
+			header, footer, main {
+				display: block;
+			}
+
+			header {
 				position: fixed;
-				bottom: 0;
+				height: 50px;
 				left: 0;
-				-webkit-overflow-scrolling: touch;
+				right: 0;
+				top: 0;
+				background-color: cadetblue;
+				text-align: center;
+			}
+
+			footer {
+				position: fixed;
+				height: 34px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color:lightslategray;
+			}
+
+			main {
+				margin-top: 50px;
+				margin-bottom: 34px;
+				height: 2000px;
+				background-color:khaki;
 			}
 		</style>
 	</head>
 	<body>
-		<div>
-			<h2>为什么HTML5只需要写<!DOCTYPE HTML>就可以</h2>
-			因为 HTML5 与 HTML4 基于的基准不同。HTML4 基于 SGML 因此需要除了 DOCTYPE 外还需要引入 DTD 来告诉浏览器用什么标准进行渲染。DTD 还分为标准模式、严格模式。如果什么都不写，就完全让浏览器自我发挥，会变成怪异模式。
-
-			HTML5 不基于 SGML，因此后面就不要跟 DTD，但是需要 DOCTYPE 来规范浏览器的渲染行为。
-			
-			注：SGML 是通用标记语言的集合。其中有 HTML、XML，因此需要用 DTD 来指定使用那种规范。
-		</div>
-		<label for="tel">电话：</label>
-		<input type="text", value="15616165", name="tel">
-		<div class="content">
-			<div class="child">hello world!</div>
-		</div>
+		<header>
+			head
+		</header>
+		
+		<main>
+			<div>
+				<h2>为什么HTML5只需要写<!DOCTYPE HTML>就可以</h2>
+				因为 HTML5 与 HTML4 基于的基准不同。HTML4 基于 SGML 因此需要除了 DOCTYPE 外还需要引入 DTD 来告诉浏览器用什么标准进行渲染。DTD 还分为标准模式、严格模式。如果什么都不写，就完全让浏览器自我发挥，会变成怪异模式。
+	
+				HTML5 不基于 SGML，因此后面就不要跟 DTD，但是需要 DOCTYPE 来规范浏览器的渲染行为。
+				
+				注：SGML 是通用标记语言的集合。其中有 HTML、XML，因此需要用 DTD 来指定使用那种规范。
+			</div>
+		</main>
+		
+		<footer>
+			<input type="text" placeholder="Footer..."/>
+			<button class="submit">提交</button>
+		</footer>
 		<script>
 
 		</script>
