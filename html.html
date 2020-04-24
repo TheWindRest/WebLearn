@@ -2,32 +2,16 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>九宫格</title>
+		<title>测试</title>
 		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
 
 		</style>
 	</head>
-	<body>
-		<script>
-			var arr = [];
-			function getRndInt(min, max){
-				return Math.floor(Math.random() * (max - min + 1)) + min;
-			}
-			function createArr(arr)
-			{
-				if(arr.length == 5)
-				{
-					return arr;
-				}
-				let rndNum = getRndInt(2, 32);
-				if(arr.indexOf(rndNum) == -1)
-				{
-					arr.push(rndNum);
-				}
-				createArr(arr);
-			}
-			createArr(arr);
-			console.log(arr);
-		</script>
+	<body>	
+		<div class="green"></div>
 	</body>
 </html>

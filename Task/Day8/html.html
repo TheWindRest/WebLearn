@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>写一个去除制表符和换行符的方法</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			.content {
+				overflow: hidden;
+			}
+			.parent1 {
+				width: 100px;
+				height: 100px;
+				border: 10px solid rgba(255, 0, 0, 0.5);
+				margin: 10px;
+				padding: 10px;
+				background-color: green;
+				background-clip:content-box;
+			}
+			.parent2 {
+				width: 100px;
+				height: 100px;
+				border: 10px solid rgba(255, 0, 0, 0.5);
+				margin: 20px;
+				padding: 10px;
+				background-color: green;
+				background-clip:content-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			iframe框架都有哪些优缺点:
+			优点：
+			1.重载页面时不需要重载整个页面，只需要重载页面中的一个框架页
+			2.技术易于掌握，使用方便，可主要应用于不需搜索引擎来搜索的页面
+			3.方便制作导航栏
+			缺点
+			1.会产生很多页面，不容易管理
+			2.*不容易打印
+			3.对浏览器搜索引擎不友好
+			4.多框架的页面会增加服务器的http请求
+		</div>
+		<div class="day-css">
+			简述你对BFC规范的理解:
+			BFC（block formatting context），中文直译：块格式化上下文
+			是CSS中的一个渲染机制，BFC就相当于一个盒子，内部的元素与外界的元素互不干扰。它不会影响外部的布局，外部的布局也不会影响到它。
+		</div>
+		<div class="content">		  
+			<div class="parent1"></div>
+		</div>
+		<div class="content">		  
+			<div class="parent2"></div>
+			<div class="parent2"></div>
+		</div>
+		  <div class="parent2"></div>
+		<script>
+			var str = "hello world ni hanio ma ni af fjeni fjeo";
+			function collectNum(str, target)
+			{
+				return str.split(target).length - 1;
+			}
+			console.log(collectNum(str, "ni"));
+		</script>
+	</body>
+</html>
