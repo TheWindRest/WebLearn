@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第18天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>怎样在页面上实现一个圆形的可点击区域</h2>
+			1、用canvas画布，弧线画圆，在canvas上监听点击事件
+			2、用一个div,给div添加圆角属性50，在div上添加点击事件
+			3、button 上添加圆角属性
+			4、a标签添加圆角属性
+		</div>
+		<div>
+			<h2>什么是FOUC？你是如何避免FOUC的</h2>
+			FOUC 即 Flash of Unstyled Content，是指页面一开始以样式 A（或无样式）的渲染，突然变成样式B。
+			原因是样式表的晚于 HTML 加载导致页面重新进行绘制。
+			
+			通过 @import 方式导入样式表
+			style 标签在 body 中
+			解决方法：把 link 标签将样式放在 head 中
+		</div>
+		<div>
+			<h2>你理解的"use strict";是什么?使用它有什么优缺点</h2>
+			严格模式，其实就是更严格了
+
+			设立"严格模式"的目的，主要有以下几个：
+			　　- 消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;
+			　　- 消除代码运行的一些不安全之处，保证代码运行的安全；
+			　　- 提高编译器效率，增加运行速度；
+			　　- 为未来新版本的Javascript做好铺垫。
+
+			我放几个常见的吧，详情可以去下面的文章中看
+
+			禁止this关键字指向全局对象
+			禁止在函数内部遍历调用栈
+			全局变量必须显式声明
+			arguments不再追踪参数的变化
+		</div>
+		<script>
+
+		</script>
+	</body>
+</html>

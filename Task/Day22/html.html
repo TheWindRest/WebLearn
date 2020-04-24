@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第22天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>js放在html的<body>和<head>有什么区别</h2>
+				js 放在 <head> 中，如果不添加 async 或者 defer 时，当浏览器遇到 script 时，会阻塞 DOM 树的构建，进而影响页面的加载。
+				当 js 文件较多时，页面白屏的时间也会变长。在这个过程中，如果解析器遇到了一个脚本(script)，
+				它就会停下来，并且执行这个脚本，然后才会继续解析 HTML。
+				如果遇到了一个引用外部资源的脚本(script)，它就必须停下来等待这个脚本资源的下载，
+				而这个行为会导致一个或者多个的网络往返，并且会延迟页面的首次渲染时间。把 js 放到 <body> 里（一般在 </body> 的上面）时，
+				由于 DOM 时顺序解析的，因此 js 不会阻塞 DOM 的解析。对于必须要在 DOM 解析前就要加载的 js，我们需要放在 <head> 中。
+				https://zhuanlan.zhihu.com/p/26440626
+		</div>
+		<div>
+			<h2>说说浏览器解析CSS选择器的过程</h2>
+			浏览器对于 CSS 选择器的解析过程是从右向左的。
+
+			.class ul li span {
+			  // css 属性
+			}
+			如果是这样的一个结构，浏览器会从右向左开始解析。因为一般来说，最右侧的节点范围反而会比较大，越向左限定的条件就越多。也因此 CSS 的选择器设计上不宜嵌套过多，会带来性能上的问题。
+			https://segmentfault.com/q/1010000000713509
+		</div>
+		<div>
+			<h2>你对new操作符的理解是什么？手动实现一个new方法</h2>
+			new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
+			1.创建新对象
+			2.新对象原型[[prototype]] = 构造函数prototype
+			3.this 指向新对象
+			4.执行构造函数
+			5.如果构造函数返回非空对象，就返回这个对象引用，不然返回创建的新对象
+		</div>
+		<script>
+			function constructorFunction(name, age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			constructorFunction.prototype.say = function(){
+				return 'Hello '+ this.name
+			}
+			function newNew(){
+				var newObj = {}
+				// 1. 创建一个新对象
+				var Con = [].shift.call(arguments)
+				// 得到构造函数
+				newObj.__proto__ = Con.prototype;
+				// 2. 把新对象的原型指向构造函数的prototype
+				var res = Con.apply(newObj, arguments)
+				// 3. 把构造函数里的this指向新对象
+				console.log(newObj);
+				return newObj;
+				// 4. 返回新对象
+			}
+			var obj = newNew(constructorFunction, 'willian', 18)
+			console.log(obj.name, obj.age);//'willian', 18
+			console.log(obj.say())//Hello willian
+		</script>
+	</body>
+</html>

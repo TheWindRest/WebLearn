@@ -60,6 +60,13 @@
 				
 				注：SGML 是通用标记语言的集合。其中有 HTML、XML，因此需要用 DTD 来指定使用那种规范。
 			</div>
+			<Div>
+				<h2> 什么是闭包？优缺点分别是什么</h2>
+				https://cnodejs.org/topic/5d39c5259969a529571d73a8
+				就如同它的名字描述的一般，闭包表示的是一个封闭的内存空间。
+				每个函数被创建的时候，都有一个与之关联的闭包。
+				每个函数被创建的时候，都会有一个与之关联的闭包被同时创建。在新创建的函数内部，如果引用了外部作用域中的变量，那么这些变量都会被添加到该函数的闭包中。
+			</Div>
 		</main>
 		
 		<footer>
@@ -67,7 +74,35 @@
 			<button class="submit">提交</button>
 		</footer>
 		<script>
+			//使用let时每次运行循环都会进行重新绑定
+			function f() {
+				const a = [];
+				for(let i = 0; i < 2; i++) {
+					var ff = function () {
+						console.log(i)
+					};
+					a.push(ff);
+				}
+				return a;
+			}
 
+			const [f1, f2] = f();
+			f1();
+			f2();
+		</script>
+		<script>
+			var a = [];
+			for(var i = 0; i < 2; i++) {
+				a.push((function (i) { // f1, i1
+					return function () { // f2
+					console.log(i) // i2
+					}
+				})(i)); // i3
+			};
+
+			const [f3, f4] = a;
+			f3();
+			f4();
 		</script>
 	</body>
 </html>

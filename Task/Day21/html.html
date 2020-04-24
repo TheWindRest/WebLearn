@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第21天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>谈谈你对input元素中readonly和disabled属性的理解</h2>
+			在表现上 readonly 和 disabled 都不能让用户对 input 进行编辑。但从含义上两者还是有较大的差别的。
+			readonly 直译为 “只读”，一般用于只允许用户填写一次的信息，提交过一次之后，就不允许再次修改了。			
+			disabled 直译为 “禁用”，即这个 input 就是不允许填写和使用的（可能是因为权限或者其他原因）。			
+			因此在外观上，readonly 与普通 input 无异，只是点击后无法进行编辑；而 disabled 的 input 呈灰色，也不允许点击。
+			从这两点其实也可以看出，对于 input 的事件，readonly 会响应，而 disabled 是不响应的。
+			并且在传输数据上，disabled 的数据是不会被获取和上传，readonly 的数据会被获取和上传。
+		</div>
+		<div>
+			<h2>说说你对line-height是如何理解的</h2>
+			line-height 行高，就是两行文字之间基线的距离，用来调整文字的行间距。
+			line-height 在日常用的最多的是让单行文字垂直居中（其实不需要设置 height，一个 line-height 即可）。
+			因为 line-height - font-size 为行距，一般会近似平分到文字的上下两边，使文字看上去垂直居中。
+			如果需要多行文字的垂直居中，还需要加上 vertical-align: middle;
+			line-height 可以不设置单位，表示 font-size 的倍数。
+			另外对于非替换元素的纯内联元素，其高度是由 line-height 所决定的。
+		</div>
+		<div>
+			<h2>写一个方法验证是否为中文</h2>
+		</div>
+
+		<input type="text" name="tel" id="tel" disabled>
+		<script>
+			var tel = document.getElementById("tel");
+			console.log(tel);
+			tel.removeAttribute("disabled");
+		</script>
+		<script>
+			function isChinese(str) {
+				const re = /^[\u4e00-\u9fa5]+$/;
+				return re.test(str);
+			}
+		</script>
+	</body>
+</html>

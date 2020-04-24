@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第19天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>说说你对html中的置换元素和非置换元素的理解</h2>
+			置换元素是指：浏览器根据元素的标签和属性，来决定元素的具体显示内容。例如：浏览器根据标签的src属性显示图片。根据标签的type属性决定显示输入框还是按钮。
+				1.主要是指 img、input、textarea、select、object 等这类默认就有 CSS 格式化外表范围的元素。
+				2.浏览器根据元素的标签和属性，来决定元素的具体显示内容
+
+			非置换元素：浏览器中的大多数元素都是不可置换元素，即其内容直接展示给浏览器。例如标签，
+			标签里的内容会被浏览器直接显示给用户。
+		</div>
+		<div>
+			<h2>css的属性content有什么作用呢？有哪些场景可以用到</h2>
+			https://github.com/haizlin/fe-interview/issues/63
+		</div>
+		<div>
+			<h2>"attribute"和"property"有什么不同</h2>
+			在操作 DOM 时，我们经常会操作 attribute 和 property。不过从两者的所属关系上来说： property 属于 DOM Object，而 atrribute 属于 HTML。
+
+			property 通常比较容易获取，并且有固定的值（当然，类似 JavaScript 的对象，我们可以添加自定义的值，只是这些不会被 DOM 所认识）。比如 el.id、el.value、el.style 都是 property 而设置也只需要 el.id=newId 即可。attribute 的值不是固定的，我们可以自己为 DOM 添加需要的属性（以前常常用来存放数据或者标志位，在 HTML5 有了 data-* 的属性后，一般就利用 data-* 来存放数据了）。对于 attribute 的设定和获取我们使用 setAttribute 和 getAttribute 两个方法。
+			
+			在书写方面 property 对于大小写敏感；而 attribute 对于大小写不敏感。
+			
+			总的来看 property 的值更偏向于标准而 attribute 的值更偏向于自定义和非标准。
+		</div>
+		<script>
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第15天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>title与h1的区别、b与strong的区别、i与em的区别</h2>
+			title 是 网页标题标签
+			h1 是文本标签 默认与word的h1相似为最大的标题显示
+			b 为文本加粗标签 与word的加粗功能相似
+			strong 为强调语气， 也是为文本加粗 与b标签是有不同
+			i 标签为斜体 常用于阿里图标 和图片
+			em 标签为 斜体 用于文本斜体较多
+			strong是语义化的b em是语义化的i
+		</div>
+		<div>
+			<h2>style标签写在body前和body后的区别是什么</h2>
+			渲染机制的区别，在body前是已经把样式浏览一遍，到了对应标签直接，渲染样式，显示快。
+			在body后，是浏览器已经把标签浏览了，但基于没有样式，显示的不完全，再把body后的样式表，扫描后，在成为真正的样式。会慢，遇到大型网站，效果更差，这都基于浏览器从上而小的浏览机制导致的。
+		</div>
+		<script>
+			//写一个数组去重的方法（支持多维数组）
+			function flat(arr, target) {
+				arr.forEach(item => {
+					if (Array.isArray(item)) {
+						flat(item, target)
+					} else {
+						target.push(item)
+					}
+				})
+			}
+
+			function flatArr(arr) {
+				let result = []
+				
+				flat(arr, result)
+				
+				return result
+			}
+
+			function uniqueArr(arr) {
+				return [...new Set(flatArr(arr))]
+			}
+
+			const result = uniqueArr([1, 2, 3, 4, [3, 4, [4, 6]]])
+
+			console.log(result) // 1,2,3,4,6
+		</script>
+	</body>
+</html>

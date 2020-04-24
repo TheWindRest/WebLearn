@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第23天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>关于<form>标签的enctype属性你有哪些了解</h2>
+				form 标签的 enctype 属性指定将数据回发到服务器时浏览器如果对表单数据进行编码，其有三种编码形式：
+
+				1.application/x-www-form-urlencoded(也是默认格式)
+				application/x-www-form-urlencoded编码类型会将表单中发送到服务器之前都会进行编码(空格转换为 "+" 加号，特殊符号转换为 ASCII HEX 值)，
+				数据编码成键值对的形式，当表单的action为post时，它会把form数据封装到 http body 中，然后发送到服务器；
+				当表单的action位get时，它会把表单中发送的数据转换成一个字符串(如：a=1&b=2&c=3)并使用?连接到 url 后面。
+				在不指定 enctype 属性时 application/x-www-form-urlencoded 是默认属性。
+				2.multipart/form-data
+				它不对字符进行编码，在使用包含文件(如图片、mp4等文件)上传控件的表单时必须使用该值
+				3.text/plain
+				数据以纯文本格式进行编码，空格转换为 "+" 加号，但不对特殊字符编码
+		</div>
+		<div>
+			<h2>说说浏览器解析CSS选择器的过程</h2>
+			浏览器对于 CSS 选择器的解析过程是从右向左的。
+
+			.class ul li span {
+			  // css 属性
+			}
+			如果是这样的一个结构，浏览器会从右向左开始解析。因为一般来说，最右侧的节点范围反而会比较大，越向左限定的条件就越多。也因此 CSS 的选择器设计上不宜嵌套过多，会带来性能上的问题。
+			https://segmentfault.com/q/1010000000713509
+		</div>
+		<div>
+			<h2>你对new操作符的理解是什么？手动实现一个new方法</h2>
+			new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
+			1.创建新对象
+			2.新对象原型[[prototype]] = 构造函数prototype
+			3.this 指向新对象
+			4.执行构造函数
+			5.如果构造函数返回非空对象，就返回这个对象引用，不然返回创建的新对象
+		</div>
+		<script>
+			function constructorFunction(name, age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			constructorFunction.prototype.say = function(){
+				return 'Hello '+ this.name
+			}
+			function newNew(){
+				var newObj = {}
+				// 1. 创建一个新对象
+				var Con = [].shift.call(arguments)
+				// 得到构造函数
+				newObj.__proto__ = Con.prototype;
+				// 2. 把新对象的原型指向构造函数的prototype
+				var res = Con.apply(newObj, arguments)
+				// 3. 把构造函数里的this指向新对象
+				console.log(newObj);
+				return newObj;
+				// 4. 返回新对象
+			}
+			var obj = newNew(constructorFunction, 'willian', 18)
+			console.log(obj.name, obj.age);//'willian', 18
+			console.log(obj.say())//Hello willian
+		</script>
+	</body>
+</html>
