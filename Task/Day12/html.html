@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第12天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>常见的浏览器内核都有哪些？并介绍下你对内核的理解</h2>
+			内核主要分为渲染引擎和 JS 引擎。前者负责页面的渲染，后者负责执行解析 JavaScript。<br>
+			之后，由于 JS 引擎越来越独立，现在所说的浏览器内核大都指渲染引擎。<br>
+
+			目前主流的内核有以下 4 个：<br>
+
+			Trident: 由微软开发，即我们熟知的 IE 内核<br>
+			Gecko: 使用 C++ 开发的渲染引擎，包括了 SpiderMonkey 即我们熟悉的 FireFox<br>
+			Presto: Opera 使用的内核<br>
+			Webkit: 前端使用最多的 Chrome 和 Safari 使用的内核<br>
+		</div>
+		<div>
+			<h2>说说你对css盒子模型的理解</h2>
+			<ul>
+				<li>
+					css盒模型由两个盒子组成，外在的控制是否换行的盒子，以及内在的控制元素内容的盒子。<br>
+					比如：display: inline-block, 则它的外在的盒子就是inline也就是不占据一行，而block则表示内部的元素具有块状特性。<br>
+					所以，display: inline其实就是display: inline-inline的缩写，display: block就是display: block-block的缩写。<br>
+				</li>
+				<li>
+					每一个内在的盒子有: width/height, padding, border, margin这几个控制盒子大小的属性。<br>
+					其中 width/height控制元素内容大小，padding则控制元素内容到border线内侧距离，border则是元素外围边框大小，<br>
+					而margin则是控制与其他元素的间距，它的背景透明。<br>
+				</li>
+				<li>
+					对于早期，计算一个元素的占据大小，需要通过width +2* padding + 2*border来计算，<br>
+					css3中提出了box-sizing：border-box，通过这样设置，就可以使元素最终的宽高就是设定的width/height, <br>
+					浏览器会根据width/height, padding, border的大小来自动调整内部元素的大小。<br>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>网页应用从服务器主动推送到客户端有那些方</h2>
+			websocket
+		</div>
+		<script>
+			var str = "https://www.baidu.com/s?wd=WebSocket%20&rsv_spt=1&rsv_iqid=0x8d8ac0d50000eeae&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=1&rsv_dl=tb&rsv_btype=t&inputT=1078&rsv_t=fdb76IHr0wMBVu2f%2FUzVC06XBWbp2zR1d9dNuh7eB2%2BsMLG7ofiQFZmSr1pclaqSFFwK&oq=%25E6%25B5%258F%25E8%25A7%2588%25E5%2599%25A8%25E5%2586%2585%25E5%25A4%259A%25E4%25B8%25AA%25E6%25A0%2587%25E7%25AD%25BE%25E9%25A1%25B5%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E9%2580%259A%25E4%25BF%25A1%25E6%2596%25B9%25E5%25BC%258F%25E6%259C%2589%25E5%2593%25AA%25E4%25BA%259B&rsv_pq=ebad14aa0001d403&rsv_n=2&rsv_sug3=26&rsv_sug1=19&rsv_sug7=100&rsv_sug2=0&rsv_sug4=1078"
+			function parseParam(str)
+			{
+				var arr = str.split('?')[1].split('&');
+				var params = [];
+				for (let item of arr)
+				{
+					var paramArr = item.split('=');
+					params.push({'key': paramArr[0], 'value':paramArr[1]});
+				}
+				return params;
+			}
+			var params = parseParam(str);
+			console.log(params);
+		</script>
+	</body>
+</html>
