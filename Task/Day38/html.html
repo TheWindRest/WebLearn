@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第38天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>说说你对cookie和session的理解</h2>
+		</div>
+		<div>
+			<h2> 实现单行文本居中和多行文本左对齐并超出显示"..."</h2>
+			单行文本居中。在 webkit 内核中适用。非 webkit 内核，可以是用 js 或者用 ::after 模拟。
+
+			.single-text{
+				width: 500px;
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				color: white;
+				background: lightblue;
+				display: box;
+				white-space: nowrap;
+				overflow:hidden;
+				text-overflow: ellipsis;
+			}
+		   多行文本左对齐。多行文本没有很好的解决方法，只能依赖 js 或者 css 的相对定位。
+		   
+			.multi-text{
+				width: 50%;
+				height: 4.5rem;
+				line-height: 1.5;
+				padding: 20px;
+				background: lightblue;
+				overflow: hidden;
+				position: relative;
+				box-sizing: border-box;
+				
+				&::after{
+					content: '...';
+					height: 1.5rem;
+					position: absolute;
+					bottom: 5px;
+					right: 5px;
+				}
+			}
+		</div>
+		<div>
+			<h2>说说你对eval的理解</h2>
+			不安全的,
+			容易出错, 因为你不知道你传入的参数是什么鬼
+			性能底下.
+			某种情况下跟new Function(), setTimeout, setInterval类似
+			不利于代码可维护性, 可拓展性
+			不是在无可奈何的情况下, 请不要使用
+		</div>
+	</body>
+</html>

@@ -5,22 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>第34天</title>
 		<style>
-			.triangle:after {
-				content: '';
-				border: 35px solid transparent;
-				border-bottom-color: lightgreen;
-			}
+
 		</style>
 	</head>
 	<body>
 		<div>
-			<h2>html和html5有什么区别呢</h2>
-			1.HTML5简化了很多细微的语法，例如doctype的声明，只需要写<!doctype html>就行了。HTML5与HTML5，XHTML1兼容，但是与SGML不兼容。
-			2.新增与语义化标签【header、footer、section、article等】
-			3.canvas替代Flash
+			<h2>Standards模式和Quirks模式有什么区别</h2>
+			标准模式宽度就是内容本身，而怪异模式是内容加上padding加上border，但是不加margin
+
+			可以看到很多网站都使用 * { box-sizing: border-box; } 这个样式，因为浏览器默认是标准模式，也就是 content-box , 而大家其实更习惯使用怪异模式
 		</div>
 		<div>
-			<h2>用CSS绘制一个三角形</h2>
+			<h2>浏览器是怎样判断元素是否和某个CSS选择器匹配</h2>
 
 		</div>
 		<div>
@@ -34,7 +30,6 @@
 		<script>
 
 		</script>
-		<div class="triangle"></div>
 
 	</body>
 </html>

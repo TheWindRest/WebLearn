@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第39天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>title与h1、b与strong、i与em的区别分别是什么</h2>
+			title标签写在body里面不会被渲染,只能写在head里面,对网站SEO比较重要
+			h1标签写在body里面,但是写在head里(不推荐),渲染的时候会自动渲染到body里面去
+			b标签与strong标签在表现上是一样的,都自带font-weight: bold属性
+			i标签与em标签在表现上是一样的,都自带font-style: italic属性
+			b标签与i标签是物理标记,告诉浏览器以何种格式显示文字
+			strong标签与em标签是逻辑标记,逻辑元素告诉浏览器这些文字有怎么样的重要性
+		</div>
+		<div>
+			<h2>写出你知道的CSS水平和垂直居中的方法</h2>
+			单行文本居中。在 webkit 内核中适用。非 webkit 内核，可以是用 js 或者用 ::after 模拟。
+
+			.single-text{
+				width: 500px;
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				color: white;
+				background: lightblue;
+				display: box;
+				white-space: nowrap;
+				overflow:hidden;
+				text-overflow: ellipsis;
+			}
+		   多行文本左对齐。多行文本没有很好的解决方法，只能依赖 js 或者 css 的相对定位。
+		   
+			.multi-text{
+				width: 50%;
+				height: 4.5rem;
+				line-height: 1.5;
+				padding: 20px;
+				background: lightblue;
+				overflow: hidden;
+				position: relative;
+				box-sizing: border-box;
+				
+				&::after{
+					content: '...';
+					height: 1.5rem;
+					position: absolute;
+					bottom: 5px;
+					right: 5px;
+				}
+			}
+		</div>
+		<div>
+			<h2>说说你对eval的理解</h2>
+			不安全的,
+			容易出错, 因为你不知道你传入的参数是什么鬼
+			性能底下.
+			某种情况下跟new Function(), setTimeout, setInterval类似
+			不利于代码可维护性, 可拓展性
+			不是在无可奈何的情况下, 请不要使用
+		</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第35天</title>
+		<style>
+			.container {
+				width: 100%;
+				height: 100%;
+				display: flex;
+			}
+
+			.left,
+			.right {
+				flex: 0 0 auto;/* 不放大 不缩小 分配的空间*/
+				width: 50px;
+				height: 100%;
+			}
+
+			.middle {
+				flex: 1 1 auto;
+				height: 100%;
+			}
+
+			.red {
+				background-color: red;
+			}
+
+			.blue {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>用一个div模拟textarea的实现</h2>
+
+		</div>
+		<div>
+			<h2>使用flex实现三栏布局，两边固定，中间自适应</h2>
+			<div class="container">
+				<section class="left red">分为撒</section>
+				<section class="middle blue">粉丝</section>
+				<section class="right red">很多人</section>
+			</div>
+		</div>
+		<div>
+			<h2>请你解释一个为什么10.toFixed(10)会报错</h2>
+			之所以会报错，是因为在这里的 . 发生了歧义，它既可以理解为小数点，也可以理解为对方法的调用。
+			因为这个点紧跟于一个数字之后，按照规范，解释器就把它判断为一个小数点。
+			
+			所以我们可以这样修改下：
+			
+			(10).toFixed(10)
+			10..toFixed(10)
+			10 .toFixed(10)
+			10.0.toFixed(10)
+			
+			当然出现这个报错是因为前面这个数是整数，如果本来就是小数就不会出现这个报错。
+			<script>
+				console.log(10..toFixed(10));
+			</script>
+		</div>
+	</body>
+</html>
