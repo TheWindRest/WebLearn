@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第32天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>请描述HTML元素的显示优先级</h2>
+			在html中，帧元素（frameset）的优先级最高，
+			表单元素比非表单元素的优先级要高。
+			表单元素:
+			文本输入框，密码输入框，单选框，复选框，文本输入域，列表框等等
+			非表单元素
+			链接（a），div, table, span 等等
+			有窗口元素比无窗口元素的优先级高
+			有窗口元素
+			select元素，object元素，以及frames元素等等
+			无窗口元素
+			大部分html元素都是无窗口元素
+		</div>
+		<div>
+			<h2>说下line-height三种赋值方式有何区别</h2>
+			ine-height 可以有带单位及不带单位的写法（感觉其实是两种）。
+
+			div{
+				line-height: 24px;
+				line-height: 1.5;
+				line-height: 1.5em;
+				line-height: 150%;
+			}
+			对于应用在单个元素上，这几种写法的效果都是一样的（除了 px 需要一些计算）。但由于 line-height 是可以被继承的，因此会影响内部子元素的 line-height。简单的可以总结为：
+			
+			带有单位的 line-height 会被计算成 px 后继承。子元素的 line-height = 父元素的 line-height * font-size （如果是 px 了就直接继承）
+			
+			而不带单位的 line-height 被继承的是倍数，子元素的 line-height = 子元素的 font-size * 继承的倍数
+		</div>
+		<div>
+			<h2>造成内存泄漏的操作有哪些</h2>
+			1 闭包
+			2 无效的全局变量
+			3 addEventListener
+			4 setInterval
+			5 还有一种是递归的时候不用尾调用优化，如果层级比较深的话会造成内存消耗激增，有时候还会崩，但是只要递归完成了这些内存是会被释放的。
+		</div>
+		<script>
+			const convert = num => num^1;
+			convert(0); // 1
+			convert(1); // 0
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第31天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>DOM和BOM有什么区别</h2>
+			BOM指 浏览器对象模型
+			提供了独立于内容而与浏览器窗口进行交互的对象。描述了与浏览器进行交互的方法和接口，可以对浏览器窗口进行访问和操作，譬如可以弹出新的窗口，改变状态栏中的文本。
+			
+			DOM指 文档对象模型
+			DOM 是针对 HTML 的基于树的 API。描述了处理网页内容的方法和接口，是 HTML 的API，DOM 把整个页面规划成由节点层级构成的文档。
+			
+			注意: 只有 JS 的宿主环境是浏览器的时候才有 DOM 和 BOM ，在 Node 中是没有这两个对象的。
+		</div>
+		<div>
+			<h2>让网页的字体变得清晰，变细用CSS怎么做</h2>
+			http://levy.work/2016-09-30-css-make-font-weight-lighter/
+			font-weight
+			font-family
+			-webkit-font-smoothing
+		</div>
+		<div>
+			<h2>写一个方法把0和1互转（0置1，1置0）</h2>
+		</div>
+		<script>
+			const convert = num => num^1;
+			convert(0); // 1
+			convert(1); // 0
+		</script>
+
+	</body>
+</html>
