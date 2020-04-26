@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第26天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>解释下你对GBK和UTF-8的理解？并说说页面上产生乱码的可能原因</h2>
+			GBK 是中国的中文字符，包含了简体汉字和繁体汉字。
+			而 UTF-8 表示了全球国家通过的一种编码，如果需要做多语言或者国际化的时候，最好采用 UTF-8 来进行编码。
+
+			由于 UTF-8 包含了多种语言，也因此其占用的空间会比较大一些。
+			
+			而网页产生乱码往往是因为编码与解码不匹配造成的。一般我们会在 <meta> 标签中的 content 设置 charset 来决定网页采用的编码。
+			如果引用的文件为其他格式，则会出现无法解释或者解释不对的字符，即乱码问题。
+		</div>
+		<div>
+			<h2>说说bind、call、apply的区别？并手写实现一个bind的方法/h2>
+				call和apply都是为了解决改变this的指向。作用都是相同的，只是传参的方式不同。
+				除了第一个参数外，call可以接收一个参数列表，apply只接受一个参数数组。 bind绑定完之后返回一个新的函数，不执行。
+		</div>
+		<div>
+
+		</div>
+		<script>
+			Function.prototype.myCall = function (context = window) {
+				context.fn = this;
+
+				var args = [...arguments].slice(1);
+
+				var result = context.fn(...args);
+				// 执行完后干掉
+				delete context.fn;
+				return result;
+			}
+			Function.prototype.myApply = function (context = window) {
+				context.fn = this;
+
+				var result
+				// 判断 arguments[1] 是不是 undefined
+				if (arguments[1]) {
+					result = context.fn(...arguments[1])
+				} else {
+					result = context.fn()
+				}
+
+				delete context.fn
+				return result;
+			}
+			Function.prototype.myBind = function (context) {
+				if (typeof this !== 'function') {
+					throw new TypeError('Error')
+				}
+				var _this = this
+				var args = [...arguments].slice(1)
+				// 返回一个函数
+				return function F() {
+					// 因为返回了一个函数，我们可以 new F()，所以需要判断
+					if (this instanceof F) {
+					return new _this(...args, ...arguments)
+					}
+					return _this.apply(context, args.concat(...arguments))
+				}
+			}
+
+			function tempFunc(a, b){
+				console.log(a, b);
+			}
+
+			tempFunc.call(window, 1, 2);
+			tempFunc.apply(window, [1, 2]);
+			var tempFuncDele = tempFunc.bind(window, 3);
+			tempFuncDele(2);
+		</script>
+	</body>
+</html>

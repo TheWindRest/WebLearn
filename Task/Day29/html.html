@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第29天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>你了解什么是无障碍web（WAI）吗？在开发过程中要怎么做呢</h2>
+			无障碍 web 是指能让视觉障碍的人也能根据屏幕阅读器的提示阅读网页。这一块只知道一个大致概念，国内使用较少（甚至还遇到过加了 title 被测试提 bug 的情况）
+
+			目前能想到的只有下面几点：
+			
+			尽可能地使用语义化标签，如 <section>, <article> 等标签
+			img 标签添加 alt
+			button 或者按钮上添加 title
+			表单尽量使用 label for 可以和控件的 id 进行关联
+		</div>
+		<div>
+			<h2>请描述css的权重计算规则</h2>
+			选择器		案例			 权重值
+			!important	!important	   Infinity
+			内联样式	 style=".."	     1000
+			ID			#id			     100
+			class	    .class			 10
+			属性	    [type='text']	 10
+			伪类	    :hover	         10
+			标签	    p				  1
+			伪元素	    ::first-line	  1
+			相邻选择器、子代选择器、通配符	* > +	0
+		</div>
+		<div>
+			<h2>写一个获取数组的最大值、最小值的方法</h2>
+		</div>
+		<script>
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+			console.log(Math.max(...arr));
+			console.log(Math.min(...arr));
+		</script>
+
+	</body>
+</html>

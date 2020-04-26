@@ -3,39 +3,118 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>第23天</title>
+		<title>第24天</title>
 		<style>
 
 		</style>
 	</head>
 	<body>
 		<div>
-			<h2>关于<form>标签的enctype属性你有哪些了解</h2>
-				form 标签的 enctype 属性指定将数据回发到服务器时浏览器如果对表单数据进行编码，其有三种编码形式：
-
-				1.application/x-www-form-urlencoded(也是默认格式)
-				application/x-www-form-urlencoded编码类型会将表单中发送到服务器之前都会进行编码(空格转换为 "+" 加号，特殊符号转换为 ASCII HEX 值)，
-				数据编码成键值对的形式，当表单的action为post时，它会把form数据封装到 http body 中，然后发送到服务器；
-				当表单的action位get时，它会把表单中发送的数据转换成一个字符串(如：a=1&b=2&c=3)并使用?连接到 url 后面。
-				在不指定 enctype 属性时 application/x-www-form-urlencoded 是默认属性。
-				2.multipart/form-data
-				它不对字符进行编码，在使用包含文件(如图片、mp4等文件)上传控件的表单时必须使用该值
-				3.text/plain
-				数据以纯文本格式进行编码，空格转换为 "+" 加号，但不对特殊字符编码
+			<h2>说说你对属性data-的理解</h2>
+			原本 HTML 也允许自定义 attributes 因此在早期前端，为了将数据塞在标签中，往往会采用自定义属性存放数据的方法。
+			而 data- 便是 HTML 5 中用来存放数据的标签。使用 data-* 时，需要注意，data- 之后的单词必须是小写的，
+			但是可以用多个 - 连接。而在对应的 DOM 方法中，我们可以通过 ele.dataset[属性名] 进行访问。
+			在这里的属性名可以使用驼峰（转换规则和 vue 的组件名称转换一样）。			
+			相比之前的自定义属性存放数据，使用 data-* 的方法，在数据的获取上会比较方便。
 		</div>
 		<div>
-			<h2>说说CSS的优先级是如何计算的</h2>
-			!important > 内联样式（1000） > id 选择器（100） > class 选择器（10） > tag（1） > *
+			<h2>你有用过CSS预处理器吗？喜欢用哪个？原理是什么</h2>
+			它能让你的CSS具备更加简洁、适应性更强、可读性更强、层级关系更加明显、更易于代码的维护等诸多好处。
+			CSS预处理器种类繁多，目前Sass、Less、用的比较多。
+			使用功能：
+			1、嵌套：反映层级和约束
+			2、变量和计算： 减少重复代码
+			3、Extend 和 Mixin 代码片段 (用的少)
+			4、循环：适用于复杂有规律的样式
+			5、import css 文件模块化 @import url("css/main.css");
 		</div>
 		<div>
-			<h2>0.1 + 0.2、0.1 + 0.3和0.1 * 0.2分别等于多少？并解释下为什么</h2>
-			EcmaScrpt规范定义Number的类型遵循了IEEE754-2008中的64位浮点数规则定义的小数后的有效位数至多为52位导致计算出现精度丢失问题
+			<h2>如何快速让一个数组乱序</h2>
+			使用array.sort()进行乱序存在一定问题，增大样本进行实验之后可以发现这种乱序方案并不是完全随机的（所有元素会大概率停留在自己的初始位置）
+			（v8处理排序是小于10个是插入排序，大于10个是快排，排序算法复杂度介于O(n)与O(n2)之间，
+			也就是存在两个元素都没有比较的机会，因此不是完全随机），这里可以使用Fisher–Yates shuffle（洗牌算法）
 		</div>
 		<script>
-			console.log(0.1 + 0.2);
-			console.log(0.1 + 0.3);
-			console.log(0.1 * 0.2);
-			parseFloat((0.1+0.2).toFixed(10)) === 0.3//true
+			function Person(){
+				this.name;
+			}
+			Person.prototype.say=function(){
+				console.log("hello");
+			}
+			
+			var person=new Person();
+			
+			console.log(Person.__proto__);	//函数
+			console.log(Function.prototype);	//函数
+			
+			console.log(Person.prototype.__proto__);	//Object
+			console.log(Object.prototype);	//Obejct
+			
+			console.log(person.__proto__);	//包含say的原型
+			console.log(Person.prototype);	//包含say的原型
+			
+			console.log(Person.prototype.constructor);//Person
+			console.log(Person);
+		</script>
+		<script>
+			//插入排序 复杂度n的平方
+			var tempArray = [3, 7, 1, 10, 6, 8, 2, 5, 4, 9];
+			for(let i = 1; i < tempArray.length; i++)
+			{
+				for(let j = i; j > 0; j--)
+				{
+					if(tempArray[j] > tempArray[j - 1])
+					{
+						let temp = tempArray[j];
+						tempArray[j] = tempArray[j - 1];
+						tempArray[j - 1] = temp;
+					}
+				}
+			}
+			console.log(tempArray);
+			//快速排序 复杂度为n
+			function quickSort(arr)
+			{
+				let middle = Math.floor(arr.length / 2);
+				let leftArr = [];
+				let rightArr = [];
+				for(let i = 0; i < arr.length; i++)
+				{
+					if(arr[i] <= arr[middle])
+					{
+						leftArr.push(arr[i]);
+					}
+					else
+					{
+						rightArr.push(arr[i]);
+					}
+				}
+				if(leftArr.length >= 2)
+				{
+					leftArr = quickSort(leftArr);
+				}
+				if(rightArr.length >= 2)
+				{
+					rightArr = quickSort(rightArr);
+				}
+				return leftArr.concat(rightArr);
+			}
+			console.log(quickSort(tempArray));
+			//Fisher–Yates shuffle（洗牌算法）
+			Array.prototype.shuffle = function() { 
+				var input = this; 
+				for (var i = input.length-1; i >=0; i--) 
+				{ 
+					var randomIndex = Math.floor(Math.random()*(i+1)); 
+					var itemAtIndex = input[randomIndex]; 
+					input[randomIndex] = input[i]; 
+					input[i] = itemAtIndex; 
+				} 
+				return input; 
+			}
+
+			tempArray.shuffle(); 
+			console.log(tempArray);
 		</script>
 	</body>
 </html>
