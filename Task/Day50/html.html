@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第50天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>Ajax与Flash的优缺点分别是什么</h2>
+			Ajax 只是一套异步发网络请求然后更新页面的实践方案，Flash 是一个浏览器插件，
+			但提供的是相对完整的运行时平台。Flash 被移动端抛弃了，连亲娘都不要它了，9102年了都。
+		</div>
+		<div>
+			<h2>列举CSS优化、提高性能的方法</h2>
+			<h3>加载性能</h3>
+				压缩CSS
+				通过link方式加载，而不是@import
+				复合属性其实分开写，执行效率更高，因为CSS最终也还是要去解析如 margin-left: left;
+			<h3>选择器性能</h3>
+				尽量少的使用嵌套，可以采用BEM的方式来解决命名冲突
+				尽量少甚至是不使用标签选择器，这个性能实在是差，同样的还有*选择器
+				利用继承，减少代码量
+			<h3>渲染性能</h3>
+				慎重使用高性能属性：浮动、定位；
+				尽量减少页面重排、重绘；
+				css雪碧图
+				自定义web字体，尽量少用
+				尽量减少使用昂贵属性，如box-shadow/border-radius/filter/透明度/:nth-child等
+				使用transform来变换而不是宽高等会造成重绘的属性
+		</div>
+		<div>
+			<h2>请写出一个函数求出N的阶乘（即N!）</h2>
+			<script>
+
+				function getFactorial1(num)
+				{
+					var arr = new Array(num);
+					arr[0] = 1;
+					for(let i = 1; i < num; i++)
+					{
+						arr[i] = (i + 1) * arr[i - 1];
+					}
+					return arr[num - 1];
+				}
+
+				function getFactorial2(num)
+				{
+					let sum = total = 1;
+					while(sum <= num)
+					{
+						total *= sum;
+						sum++;
+					}
+					return total;
+				}
+				console.log(getFactorial1(3));
+				console.log(getFactorial2(3));
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第44天</title>
+		<style>
+			html, body{
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.container {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				width: 100%;
+				height: 100%;
+			}
+
+			.flex-head, .flex-middle {
+				width: 100%;
+				height: 30%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 10px 0;
+			}
+
+			.item {
+				background-color: red;
+				width: 40%;
+				height: 100%;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>说说video标签中预加载视频用到的属性是什么</h2>
+			属性	值	描述
+			autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。
+			controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+			height	pixels	设置视频播放器的高度。
+			loop	loop	如果出现该属性，则当媒介文件完成播放后再次开始播放。
+			preload	preload	如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+			src	url	要播放的视频的 URL。
+			width	pixels	设置视频播放器的宽度。
+		</div>
+		<div>
+			<h2>手写一个满屏品字布局的方案</h2>
+			<div class="container">
+				<div class="flex-head">
+					<div class="item">hello world</div>
+				</div>
+				<div class="flex-middle">
+					<div class="item">hello world</div>
+					<div class="item">hello world</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>深度克隆对象的方法有哪些，并把你认为最好的写出来</h2>
+			var  obj1={
+				name: '张三',
+				age:14,
+				friend:['小红','小白'],
+				parents:{
+					mother:{name: '李岚',age:34},
+					father:{name: '张武',age:35}
+				}
+			}
+			var obj2 = JSON.parse(JSON.stringify(obj1))
+			obj1.mother === obj2.parents.mother//false
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第46天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>页面中怎么嵌入Flash？有哪些方法？写出来</h2>
+			<object width="550" height="400">
+				<param name="movie" value="somefilename.swf">
+				<embed src="somefilename.swf" width="550" height="400"></embed>
+			</object>
+		</div>
+		<div>
+			<h2>说说你对媒体查询的理解</h2>
+			为了适应不同的设备终端
+			https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries
+		</div>
+		<div>
+			<h2>写一个使两个整数进行交换的方法（不能使用临时变量）</h2>
+			<script>
+				var a = 2;
+				var b = 3;
+				a =  a + b;
+				b = a - b;
+				a = a - b;
+				console.log(a, b);
+				{
+					let a = 1;
+					let b = 2;
+					[a,b] = [b,a];
+					console.log(a, b);
+				}
+			</script>
+		</div>
+	</body>
+</html>

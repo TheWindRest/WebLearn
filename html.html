@@ -2,55 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>shadow-dom</title>
+    <title>测试</title>
     <style>
-        h1, p {
-            color: #db73ff !important;
-        }
-        #host {
-            background-color: yellow;
+        .my-bottom {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            background-color: rosybrown;
         }
     </style>
 </head>
 <body>
-  <div id="host">
-      <h1 class="title">I am title</h1>
-      <p class="subtitle">I am subtitle</p>
-  </div>
-
-  <template id="temp">
-      <style>
-          span {
-              color: red;
-          }
-          ::content * {
-            z-index: 10;
-              background-color: #60d9ff;
-          }
-          :host {
-              border: 10px solid #14ff1a;
-          }
-      </style>
-      <p onclick="alert('hello~');" pseudo="test">template - 点我吧~~</p>
-      <span>I'm the span tag of template</span>
-      <!-- 绑定#host所有内容 -->
-      <!--<content></content>-->
-
-      <!-- 绑定#host p的内容 -->
-      <content select=".subtitle">deas</content>
-      <!-- 绑定#host h1的内容 -->
-      <content select="h1">des</content>
-  </template>
-<script>
-    var host = document.querySelector('#host');
-    var root = host.attachShadow({mode:"open"});
-    var temp = document.querySelector('#temp');
-    var clone = document.importNode(temp.content, true);
-
-    root.appendChild(clone);
-    document.addEventListener('click', function(e) {
-
-        console.log(e.target.innerHTML + ' click!');
-    });
-</script>
+    <header class="my-head">头部</header>
+    <section>内容</section>
+    <footer class="my-bottom">底部</footer>
 </body>

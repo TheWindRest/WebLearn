@@ -10,37 +10,33 @@
 	</head>
 	<body>
 		<div>
-			<h2>解释下什么是ISISO8859-2字符集</h2>
-			ISO/IEC 8859-1，又称Latin-1或“西欧语言”，
-			ISO/IEC 8859-2 Latin-2或“中欧语言”，
-			是国际标准化组织内ISO/IEC 8859的8位字符集。
-			它以ASCII为基础，在空置的0xA0-0xFF的范围内，
-			加入192个字母及符号，藉以供使用变音符号的拉丁字母语言使用。
+			<h2>如何让元素固定在页面底部？有哪些比较好的实践</h2>
+			https://aotu.io/notes/2017/04/13/Sticky-footer/index.html
 		</div>
 		<div>
-			<h2>重置（初始化）css的作用是什么</h2>
-			简单讲主要是为了 统一各个浏览器自带的默认样式而诞生的
-			浏览器默认样式会影响我们的设计还原，而且默认样式一般不够美观，
-			满足不了定制化的视觉需求，达不到视觉产品的信息传达目标。
+			<h2>span与span之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</h2>
+			产生空白的原因：元素被当成行内元素排版的时候，
+			元素之间的空白符（空格、回车换行等）都会被浏览器转换成一个空白字符，
+			这个字符的大小受font-size影响
 		</div>
 		<div>
-			<h2>window对象和document对象有什么区别</h2>
-			window对象:
-			代表浏览器中的一个打开的窗口或者框架，
-			window对象会在或者每次出现时被自动创建，
-			在客户端JavaScript中，Window对象是全局对象global，
-			所有的表达式都在当前的环境中计算，要引用当前的窗口不需要特殊的语法，
-			可以把那个窗口属性作为全局变量使用，例如：可以只写document，
-			而不必写window.document。同样可以把窗口的对象方法当做函数来使用，
-			如：只写alert()，而不必写window.alert.
-			window对象实现了核心JavaScript所定义的全局属性和方法。
-			document对象：
-			代表整个HTML文档，可以用来访问页面中的所有元素 。
-			每一个载入浏览器的HTML文档都会成为document对象。
-			document对象使我们可以使用脚本(js)中对HTML页面中的所有元素进行访问。
-			document对象是window对象的一部分可以通过window.document属性对其进行访问
-			HTMLDocument接口进行了扩展，定义HTML专用的属性和方法，
-			很多属性和方法都是HTMLCollection对象，其中保存了对锚、表单、链接以及其他可脚本元素的引用。
+			<h2>JQuery的源码看过吗？能不能简单概括一下它的实现原理</h2>
+			(function(window,undefined,document){
+				function jQuery(prop){
+				  return new jQuery.prototype.init()
+				}
+				jQuery.prototype = {
+				  contructor:jQuery,
+				  init:function(prop){},
+				  //  ...
+			   }
+			   jQuery.prototype.init.prototype = jQuery.prototype;
+			   window['jQuery'] = window['$'] = new jQuery()
+			  })(window,undefined,document)
+			  jQuery是通过封装浏览器原生的DOM API实现dom元素的选取，
+			  然后封装到jQuery对象中去，同时根据浏览器检测对不同浏览器操作不同的APi .jQuery 对象上高度集成了超的API。
+			  当然 jQuery 还有做的更多比如，我们可以new jQuery('div'),也可以直接$('div'),
+			  这个巧妙地运算就是上面init方法；如果页面已经有$时，jQuery会先将$接管把之前$的全局名保存下来 等后面使用是在释放
 		</div>
 	</body>
 </html>

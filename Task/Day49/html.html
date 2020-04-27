@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第49天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>说说你对target="_blank"的理解？有啥安全性问题？如何防范</h2>
+			https://zhuanlan.zhihu.com/p/53132574
+		</div>
+		<div>
+			<h2>假如设计稿使用了非标准的字体，你该如何去实现它</h2>
+			设计的职责是美观，前端的职责是尽可能还原，设计之所以会使用非标准的字体、甚至侵权的字体是因为不了解技术实现和版权意识。
+			所以先沟通，告知设计实际的情况，然后在综合考量的情况下应该尽可能去实现，通常采用载入字体和图片化的方式。
+		</div>
+		<div>
+			<h2>写个还剩下多少天过年的倒计时</h2>
+			<script>
+				const countDown = (range = "day") => {
+					const nowDate = new Date();
+					const currentYear = nowDate.getFullYear();
+					const nextYear = new Date(currentYear + 1, 0, 1);	//new Date()的第二个参数是monthIndex，取值是0-11
+
+					const rangeBase = {
+						minute: 1000 * 60,
+						hour: 1000 * 60 * 60,
+						day: 1000 * 60 * 60 * 24,
+						week: 1000 * 60 * 60 * 24 * 7,
+						month: 1000 * 60 * 60 * 24 * 30
+					};
+					return Math.floor(
+						(nextYear.valueOf() - nowDate.valueOf()) /
+						(rangeBase[range] || rangeBase.day)
+					);
+				};
+
+				console.log(countDown("hour"));
+				console.log(countDown());
+				console.log(countDown("week"));
+				console.log(countDown("month"));
+			</script>
+		</div>
+	</body>
+</html>
