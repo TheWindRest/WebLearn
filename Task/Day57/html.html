@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第57天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>你了解HTML5的download属性吗</h2>
+			download 属性规定被下载的超链接目标，该属性也可以设置一个值来规定下载文件的名称。
+			兼容性各异，Chrome和Firefox仅支持加载同源链接。
+			<a href="/images/logo.png" download="/images/logo.png"></a>
+			download 属性定义了下载链接的地址。
+		</div>
+		<div class="day-css">
+			<h2>inline、block、inline-block这三个属性值有什么区别</h2>
+			CSS显示模块分为内部显示类型和外部显示类型，内部显示类型是定义子元素如何参与内部布局，
+			外部显示类型定义了父元素如何参与外部整个文档流的布局，所以
+			inline-> inline-inline
+			block-> block-block
+			inline-block-> inline-block		
+		</div>
+		<div class="day-js">
+			<h2>写一个方法，使得sum(x)(y)和sum(x,y)返回的结果相同</h2>
+			<script>
+				function sum(x, y)
+				{
+					if(arguments.length == 1)
+					{
+						return function(y){
+							return x + y;
+						};
+					}
+					else if(arguments.length == 2)
+					{
+						return x + y;
+					}
+				}
+				console.log(sum(1)(2), sum(1, 2));
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>说说你对浏览器的关键渲染路径的理解</h2>
+			https://developers.google.com/web/fundamentals/performance/critical-rendering-path/
+		</div>
+	</body>
+</html>

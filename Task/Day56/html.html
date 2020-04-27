@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第56天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>渐进式渲染是什么</h2>
+			渐进式渲染是用来提高网页性能，以尽快呈现页面的技术。
+			比如：图片懒加载；确定显示内容的优先级；等
+		</div>
+		<div class="day-css">
+			<h2>margin和padding使用的场景有哪些</h2>
+			实现自适应的等比例矩形效果：
+			div { padding: 50%; }
+			div { padding: 25% 50%; } //宽高比为 2:1 的矩形效果
+			
+			实现头图高度天然等比例缩小效果
+			.box {
+			padding: 10% 50%;
+			position: relative;
+			}
+			.box > img {
+			position: absolute;
+			width: 100%; height: 100%;
+			left: 0; top: 0;
+			}
+			
+			padding 属性和 background-clip 属性配合，可以在有限的标签下实现一些 CSS 图形绘制效果
+			
+			margin 可以实现很多流体布局
+			margin 外部尺寸实现等高布局
+			实现垂直居中布局			
+		</div>
+		<div class="day-js">
+			<h2>JSONP的原理是什么？解决什么问题</h2>
+			JSONP的原理一句话来讲： script 引用的js文件没有跨域限制。
+			可以用来解决跨域问题，兼容性特别好，一般用于给第三方做接口查询。
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>说说你对域名收敛和域名发散的理解？分别在什么场景下使用</h2>
+			域名发散:
+				由于上古时代，服务器的负载能力较差，为了避免服务器过载，
+				浏览器限制网站并发地对同一域名请求资源，于是为了解决这些问题，
+				采用域名发散策略，将静态资源分布到不同的地方，减轻了服务器的负载压力。
+			域名收敛
+				进入http1.1时代，由于长连接特性的出现和服务器能力的增强，
+				资源发散策略在某些情况下不再具有优势，对同一服务器进行多次请求，
+				后发起的请求可以继续使用之前打开的tcp连接，而对于分散的资源进行请求则必须重新进行tcp连接，
+				带来额外的消耗，所以，采用域名收敛的策略，可以有效提升客户端的性能。
+		</div>
+	</body>
+</html>

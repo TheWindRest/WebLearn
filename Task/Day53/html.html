@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第53天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>Web workers有用过吗？能帮我们解决哪些问题</h2>
+			提供协程能力，如果有一个比较密集的计算任务，可以放到另一个进程中处理，
+			等处理好了再把结果传回主程，这样主要进程就不会阻塞，页面可以正常渲染和响应
+		</div>
+		<div>
+			<h2>怎么使用自定义字体？有什么注意事项</h2>
+			@font-face {
+				font-family: '自定义字体名称';
+				src: url('字体文件名.eot'); /* IE9 Compat Modes /
+				src: url('字体文件名.eot?#iefix') format('embedded-opentype'), / IE6-IE8 /
+				url('字体文件名.woff') format('woff'), / Modern Browsers /
+				url('字体文件名.ttf') format('truetype'), / Safari, Android, iOS /
+				url('字体文件名.svg#字体文件名') format('svg'); / Legacy iOS */
+				font-style: normal;
+				font-weight: normal;
+			}
+		</div>
+		<div>
+			<h2>document的load和ready有什么区别</h2>
+			主要执行顺序的区别，load：页面资源加载完成； ready：是dom加载完成。
+
+			一般我们都在js脚本都写在onload 保证dom节点都能获取。但是有时只需要dom节点加载完成就执行代码，提前执行js脚本就可放到ready里面 jQuery也为此提供了onReady方法
+		</div>
+	</body>
+</html>
