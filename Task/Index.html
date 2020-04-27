@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web日记</title>
+</head>
+<body>
+    <ul id="diary">
+    </ul>
+    <script>
+        var dayCount = 100; //日记数量
+        var diaryDoc = document.getElementById("diary");
+        for(let i = 1; i <= dayCount; i++)
+        {
+            let liItem = document.createElement("li");
+            let aItem = document.createElement("a");
+            aItem.href = "./Day" + i + "/html.html";
+            aItem.target = "_blank";
+            aItem.innerHTML = "第" + i + "天";
+            liItem.appendChild(aItem);
+            diaryDoc.appendChild(liItem);
+        }
+    </script>
+</body>
+</html>

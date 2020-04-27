@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket实例</title>
+</head>
+<body>
+    <div id="app">hello world</div>
+    <button onclick="WebSocketTest()">修改内容</button>
+    <script>
+        function WebSocketTest()
+        {
+            var ws = new WebSocket("wss://echo.websocket.org");
+            ws.onopen = function() {
+                ws.send("发送数据");
+                console.log("数据发送中...");
+            };
+            ws.onmessage = function(evt) {
+                var received_msg = evt.data;
+                console.log(`数据已接收:${received_msg}`);
+                var app = document.getElementById('app');
+                app.innerHTML = received_msg;
+                ws.close();
+            };
+            ws.onclose = function() {
+                console.log("链接已关闭");
+            };
+        }
+    </script>
+</body>
+</html>

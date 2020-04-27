@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax实例</title>
+</head>
+<body>
+    <div id="app">hello world</div>
+    <button onclick="loadXMLDoc()">修改内容</button>
+    <script>
+        function loadXMLDoc()
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    console.log(xmlHttp.responseText);
+                    document.getElementById('app').innerHTML = xmlHttp.responseText;
+                }
+            }
+            xmlHttp.open("GET", "./ajax_info.txt", true);
+            xmlHttp.send();
+        }
+    </script>
+</body>
+</html>

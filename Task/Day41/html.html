@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第41天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>webSocket怎么做兼容处理</h2>
+			https://blog.csdn.net/weixin_34232744/article/details/91364581
+		</div>
+		<div>
+			<h2>怎么让英文单词的首字母大写</h2>
+			.demo {
+				text-transform: capitalize;
+			}
+			text-transform 属性控制文本的大小写，是CSS2.1的属性，兼容性问题不大。
+			属性值是关键字，有4+1种，这个1是实验性属性值。
+
+			/* Keyword values */
+			text-transform: capitalize;
+			text-transform: uppercase;
+			text-transform: lowercase;
+			text-transform: none;
+			text-transform: full-width;
+			capitalize:这个关键字强制每个单词的首字母转换为大写。
+			uppercase:这个关键字强制所有字符被转换为大写。
+			lowercase:这个关键字强制所有字符被转换为小写。
+			none:这个关键字阻止所有字符的大小写被转换。
+			full-width （实验性属性值）:这个关键字强制字符 — 主要是表意字符和拉丁文字 — 书写进一个方形里，并允许它们按照一般的东亚文字（比如中文或日文）对齐。
+
+			<div style="text-transform: capitalize;">hello world</div>
+			<div style="text-transform: uppercase;">hello world</div>
+			<div style="text-transform: lowercase;">hello world</div>
+			<div style="text-transform: none;">hello world</div>
+			<div style="text-transform: full-width;">并允许它们按照一般的东亚文字（比如中文或日文）对齐</div>
+		</div>
+	</body>
+</html>

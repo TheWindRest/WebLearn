@@ -20,49 +20,13 @@
 		</div>
 		<div>
 			<h2>写出你知道的CSS水平和垂直居中的方法</h2>
-			单行文本居中。在 webkit 内核中适用。非 webkit 内核，可以是用 js 或者用 ::after 模拟。
-
-			.single-text{
-				width: 500px;
-				font-size: 18px;
-				font-weight: bold;
-				text-align: center;
-				color: white;
-				background: lightblue;
-				display: box;
-				white-space: nowrap;
-				overflow:hidden;
-				text-overflow: ellipsis;
-			}
-		   多行文本左对齐。多行文本没有很好的解决方法，只能依赖 js 或者 css 的相对定位。
-		   
-			.multi-text{
-				width: 50%;
-				height: 4.5rem;
-				line-height: 1.5;
-				padding: 20px;
-				background: lightblue;
-				overflow: hidden;
-				position: relative;
-				box-sizing: border-box;
-				
-				&::after{
-					content: '...';
-					height: 1.5rem;
-					position: absolute;
-					bottom: 5px;
-					right: 5px;
-				}
-			}
+			https://juejin.im/post/5bc3eb8bf265da0a8a6ad1ce#comment
 		</div>
 		<div>
-			<h2>说说你对eval的理解</h2>
-			不安全的,
-			容易出错, 因为你不知道你传入的参数是什么鬼
-			性能底下.
-			某种情况下跟new Function(), setTimeout, setInterval类似
-			不利于代码可维护性, 可拓展性
-			不是在无可奈何的情况下, 请不要使用
+			<h2>公钥加密和私钥加密是什么</h2>
+			私钥加密，也称对称加密，使用一个密钥对内容进行加密和解密，加密算法可以是公开的，但密钥必须保密，常见的私钥加密算法有：DES、AES、RC5
+
+			公钥加密，也称非对称加密，使用两个密钥，一个公开密钥用来加密，另一个私有密钥用来解密，基于其特性，可以用作数字签名的功能（如 HTTPS），常见的公钥加密算法有：RSA
 		</div>
 	</body>
 </html>
