@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="../../lib/jQuery JavaScript Library v3.4.1.js"></script>
 		<title>第28天</title>
 		<style>
 
@@ -22,7 +23,7 @@
 		<div>
 			<h2>解释下这段代码的意思</h2>
 			<script>
-				[].forEach.call($$("*"),function(a){ a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16) })
+				[].forEach.call($("*"),function(a){ a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16) })
 			</script>
 			[].forEach.call() => 调用引用数组的forEach方法
 			$$('*') => document.querySelectorAll('*')

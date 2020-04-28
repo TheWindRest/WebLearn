@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第60天</title>
+		<style>
+			.sun {
+				position: absolute;
+				right: 100px;
+				top: 50px;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background: #f8e353;
+			}
+
+			.sun::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				background: #ffd21f;
+				filter: blur(10px);
+				z-index: 1;
+				animation: inlineSun 5s ease infinite;
+			}
+
+			.sun::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				background: #fcf17c;
+				z-index: -1;
+				box-shadow: 0 0 40px #ffd21f;
+				animation: sun 5s ease-in infinite;
+			}
+
+			@keyframes inlineSun {
+				0% {
+					opacity: 1;
+				}
+
+				50% {
+					opacity: 0.5;
+					width: 70px;
+					height: 70px;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			@keyframes sun {
+				0% {
+					box-shadow: 0 0 90px #ffd21f;
+				}
+
+				50% {
+					box-shadow: 0 0 30px #ffd21f;
+				}
+
+				100% {
+					box-shadow: 0 0 90px #ffd21f;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>src、href、link的区别是什么</h2>
+			使用的地方不同，src一般用于表示图片源，js源。href一般在标签中使用，表示跳转地址。link一般用于引入css
+		</div>
+		<div class="day-css">
+			<h2>用css画一个太阳 </h2>
+			<div class="sun"></div>
+		</div>
+		<div class="day-js">
+			<h2>请实现一个flattenDeep函数，把多维数组扁平化</h2>
+			function flatten(arr) {
+				while (arr.some(item => Array.isArray(item))) {
+				  arr = [].concat(...arr)
+				}
+				return arr
+			}
+			https://my729.github.io/blog/algorithm/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96.html#%E6%8B%93%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6
+		</div>
+		<div class="day-skill">
+			<h2>如何预防掉头发</h2>
+			肝藏血，发为血之余，血亏则发枯。肾为先天之本，精血之源，其华在发。--老中医
+		</div>
+	</body>
+</html>

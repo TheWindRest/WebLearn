@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第61天</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>有用过HTML5的webSQL和IndexedDB吗？说说你对它们的理解</h2>
+			webSQL 和 IndexedDB 都是一种客户端的数据存储方案，webSQL已经废弃。
+			IndexedDB 的特点是：存储空间大，使用异步存储数据模式，存放键值对型数据，
+			支持数据库事务等，同时还可以存储多种类型数据，包括 js 对象类型。可以用在前端缓存大量数据。
+		</div>
+		<div class="day-css">
+			<h2>怎样把一个div居中？怎样把一个浮动元素居中？怎样把绝对定位的div居中 </h2>
+			<div style="width: 100%;background-color: gray;text-align: center;">
+				<div style="margin: 0 auto;background-color: indigo;">hello world</div>
+			</div>
+
+			假定是水平居中
+			div居中：
+			margin:0 auto;
+			浮动元素居中(div居中也可以用)：
+			margin-left: 50%; transform: translate(-50%);
+			绝对定位的div居中：
+			{ top:0; left:0; bottom:0; right:0; margin: auto; }
+		</div>
+		<div class="day-js">
+			<h2>写一个方法获取图片的原始宽高</h2>
+			<script>
+				function loadImageAsync(url) {
+					return new Promise(function(resolve, reject) {
+						var image = new Image();
+			
+						image.onload = function() {
+							var obj = {
+								w: image.naturalWidth,
+								h: image.naturalHeight
+							}
+							resolve(obj);
+						};
+			
+						image.onerror = function() {
+							reject(new Error('Could not load image at ' + url));
+						};
+						image.src = url;
+					});
+				}
+				var imagePromise = loadImageAsync("./22021589.png");
+				imagePromise.then(function(obj){
+					console.log(obj.w, obj.h);
+				});
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>知道IPV6是什么吗？说说它和IPV4的区别是什么</h2>
+			ipv6增加了海量的网络地址，使物联网成为可能。
+			ipv4提供的2的32次方的地址根本不够无数的家用设备使用。
+			而2的128次方的地址可为飞速增加的物联网设备提供足够的地址。
+			如今到来的5G时代，ipv6在底层上可谓功不可没。
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第59天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>有用过WebGL吗？说说你对它的理解</h2>
+			WebGL (Web图形库) 是一种JavaScript API，
+			用于在任何兼容的Web浏览器中呈现交互式3D和2D图形，
+			而无需使用插件。WebGL通过引入一个与OpenGL ES 2.0紧密相符合的API，可以在HTML5 元素中使用。
+		</div>
+		<div class="day-css">
+			<h2>你有用过哪些css框架？说说它们的特点</h2>
+		</div>
+		<div class="day-js">
+			<h2>写一个格式化金额的方法</h2>
+			<script>
+				function formatPrice(val, spacer = ',') {
+					const typeVal = typeof val
+					if (typeVal !== 'string' && typeVal !== 'number') return val
+					let _val = '' + val
+					return _val.replace(/\B(?=(\d{3})+\b)/g, spacer)	//\B匹配非单词边界，\b匹配单词边界
+				}
+
+				console.log(formatPrice(123))
+				console.log(formatPrice(1234))
+				console.log(formatPrice(12345))
+				console.log(formatPrice(123456))
+				console.log(formatPrice(1234567))
+				console.log(formatPrice(123.23))
+				console.log(formatPrice(1234.23))
+				console.log(formatPrice(1235.23))
+				console.log(formatPrice(12356.23))
+				console.log(formatPrice(123567.23))
+				console.log(formatPrice(123567890.23))
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>说说你对浏览器的关键渲染路径的理解</h2>
+			https://developers.google.com/web/fundamentals/performance/critical-rendering-path/
+		</div>
+	</body>
+</html>
