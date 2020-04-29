@@ -2,29 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试</title>
-    <style>
-        .my-bottom {
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            text-align: center;
-            background-color: rosybrown;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoSum</title>
 </head>
 <body>
     <script>
-        /**
-         * 
-         * 
-         */
         const twoSum = function (nums, target) {
             const map = new Map();
-            for (let i = 0; i < nums.length; i++) {
+            for (let i = 0; i < nums.length; i++) 
+            {
                 const diff = target - nums[i];
-                if (map.has(diff)) {
-                    return [map.get(diff), i];
+                if (map.has(diff)) 
+                {
+                    return [map.get(diff), i];  //将值和地址保存在map中
                 }
                 map.set(nums[i], i);
             }
@@ -35,3 +25,4 @@
         console.log(a, b);
     </script>
 </body>
+</html>
