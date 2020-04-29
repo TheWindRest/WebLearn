@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第73天</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>favicon.ico有什么作用？怎么在页面中引用？常用尺寸有哪些？可以修改后缀名吗</h2>
+			Favorites Icon，让浏览器的收藏夹中除显示相应的标题外，还以图标的方式区别不同的网站。
+			强烈推荐使用后缀名.ico，对浏览器的支持范围广，一个.ico文件可以同时满足多个尺寸的需求。
+			常用尺寸：1616 3232 48*48。
+			引用方法：
+			将图片 favicon.ico 放到 static 文件夹下 (用 vue-cli 搭建的Vue项目)
+			然后在 index.html 中添加：
+			<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+		</div>
+		<div class="day-css">
+			<h2>在实际编写css中你有遇到过哪些浏览器兼容性的问题？怎么解决的</h2>
+
+		</div>
+		<div class="day-js">
+			<h2>移动端点击事件为什么会有延迟？有哪些方法可以解决</h2>
+			原因：等待300ms看用户是点击还是双击缩放
+			解决办法：禁止缩放、设置默认视口宽度为设备宽度、设置css touch-action:none、fastclick.js
+		</div>
+		<div class="day-skill">
+			<h2>你知道二维码的原理是什么吗？要把android和ios的下载地址合成一个二维码怎么做呢</h2>
+			第一种，本地新建文件夹 -> git init -> git add . -> git commit -m 'xxx' -> git remote add origin xxx -> git push -u origin master
+			第二种，直接git clone xxx（ssh链接）-> git add . -> git commit -m 'xxx' -> git push
+		</div>
+	</body>
+</html>

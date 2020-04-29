@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第74天</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>在a标签上的四个伪类执行顺序是什么</h2>
+			link
+			visited
+			hover
+			active
+			简称 LV HAO -- lv 好
+		</div>
+		<div class="day-css">
+			<h2>说说你对!important的理解，一般在哪些场景使用</h2>
+			!important 可以让样式的特指度最高，覆盖任何样式，而且本身不可被覆盖。
+			一般场景就是用来强制覆盖其他样式，用的比较少，不建议使用，因为别人没法覆盖这个样式，维护性比较。
+		</div>
+		<div class="day-js">
+			<h2>写一个方法随机生成指定位数的字符串</h2>
+			<script>
+				function getRandomString (length) 
+				{
+					let str = Math.random().toString(36).substr(2)//产生数字和字母的组合
+					if (str.length >= length) {
+						return str.substr(0, length)
+					}
+					str += getRandomString(length - str.length)
+					return str
+				}
+				console.log(getRandomString(10));
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>你知道二维码的原理是什么吗？要把android和ios的下载地址合成一个二维码怎么做呢</h2>
+			第一种，本地新建文件夹 -> git init -> git add . -> git commit -m 'xxx' -> git remote add origin xxx -> git push -u origin master
+			第二种，直接git clone xxx（ssh链接）-> git add . -> git commit -m 'xxx' -> git push
+		</div>
+	</body>
+</html>

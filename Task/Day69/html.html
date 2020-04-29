@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第69天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>怎样禁止表单记住密码自动填充</h2>
+			autocomplete:"off";  
+
+			网上说，这个属性有时失效，有个解决办法是将off改为new-password。
+			
+			还有个说法(来自MDN)，之所以new-password能够解决off失效的原因是autocomplete属性的有效值只有on和off，默认值是on，
+			
+			如果autocomplete的属性是除on和off外的值，那么就是个无效值，那么浏览器就会放弃对该属性的执行。
+			
+			换句话说，除on和off外的任一值，可以随便编都行。
+			
+			在这里，我用off就够了，测试过程中没遇到失效的情况，所以暂时用off。
+		</div>
+		<div class="day-css">
+			<h2>请说说*{box-sizing: border-box;}的作用及好处有哪些</h2>
+			很多网站和样式都是 boder-box , 包括淘宝h5版本5和饿了么。 boder-box 对元素设定固定尺寸之后js获取到的值是固定的。
+		</div>
+		<div class="day-js">
+			<h2>说说你对base64的理解，它的使用场景有哪些</h2>
+			https://baijiahao.baidu.com/s?id=1644892102150918183&wfr=spider&for=pc
+			三个字节转成四个字节，每个字节最大值为64
+		</div>
+		<div class="day-skill">
+			<h2>为什么浏览器会有兼容的问题呢</h2>
+
+		</div>
+	</body>
+</html>

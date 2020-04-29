@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第70天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>html的a标签属性rel='nofollow'有什么作用</h2>
+			告诉爬虫，别往下走了，防止爬虫跳出自己的站点。
+			爬虫默认遇见链接，会继续爬取链接的内容。
+		</div>
+		<div class="day-css">
+			<h2>你有使用过哪些栅格系统？都有什么区别呢</h2>
+			bootstrap3 float完成的栅格
+			bootstrap4 flex完成的栅格
+		</div>
+		<div class="day-js">
+			<h2>Ajax请求中get和post方式有什么区别呢？分别在哪些场景下使用</h2>
+			get：
+
+			1.  GET请求会将参数跟在URL后进行传递，也就是会在url中显示
+	   
+			2.  GET请求有数据长度限制，一般在2000个字符，而POST没有。
+	   
+			3. GET方式请求的数据会被浏览器缓存起来，POST没有
+	   
+			4.  GET在某些情况下会有安全问题，POST没有。
+	   
+			5. 在客户端使用get请求时,服务器端使用Request.QueryString来获取参数
+	   
+			6. get请求参数会在url中显示，容易被他人窃取，post在请求体中，不会被窃取
+	   		post：
+	   
+			1. POST请求是作为HTTP消息的实体内容发送给WEB服务器。
+	   
+			2. 客户端使用post请求时,服务器端使用Request.Form来获取参数。 
+	   
+			3. post一般用于修改服务器上的资源，对所发送的信息没有限制。
+			4. post比get更加安全
+	   
+			5. post需要设置请求头
+		</div>
+		<div class="day-skill">
+			<h2>本地git与远程仓库连接的方式有哪些</h2>
+			第一种，本地新建文件夹 -> git init -> git add . -> git commit -m 'xxx' -> git remote add origin xxx -> git push -u origin master
+			第二种，直接git clone xxx（ssh链接）-> git add . -> git commit -m 'xxx' -> git push
+		</div>
+	</body>
+</html>

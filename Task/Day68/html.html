@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第68天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>写个例子说明HTML5在移动端如何打开APP</h2>
+			比如说：
+
+			<a href="zhihu://">打开知乎</a>
+			Android 是利用 deeplink， iOS 是利用 URL Schemes
+			DeepLink，深度链接技术，主要应用场景是通过Web页面直接调用Android原生app，并且把需要的参数通过Uri的形式，直接传递给app，节省用户的注册成本
+		</div>
+		<div class="day-css">
+			<h2>说说你对jpg、png、gif的理解，分别在什么场景下使用？有使用过webp吗</h2>
+			jpg, 色彩复杂图片
+			png, 色彩简单图片
+			gif, 动图, 或者色彩极简的icon等
+			webp, 判断能使用webp的浏览器就是用webp
+		</div>
+		<div class="day-js">
+			<h2>formData主要是用来做什么的？它的操作方法有哪些</h2>
+			用于后端参数处理为multipart/form-data的情况下 ，现在通常用于上传文件
+			https://blog.csdn.net/u012149969/article/details/81072138
+		</div>
+		<div class="day-skill">
+			<h2>js动画和css动画有什么区别</h2>
+			js 动画
+			会进入函数调用栈，走完事件循环才会走渲染，如果过程中还有频繁获取 dom 状态恐怕是药丸。
+			但相比 css 动画（不考虑 css 变量），js 动画可配置目标值或速率等，搭配 transition 挺不错。
+			且 js 动画做暂停、反向和复杂的节奏都要更棒。
+			再比如弧形运动轨迹，对 css 动画而言恐怕就比较难搞了。
+			css 动画
+			非常简易的 hover active checked 等动效用 css 来写真是太方便了。
+			对循环播放的动画，多数情况下也是 css 动画更佳。
+			css 动画库的复用感觉会相较高很多。
+			至于所谓的 gpu 加速或 will-change 很难讲哟，真的有效，但却不是很懂。
+		</div>
+	</body>
+</html>

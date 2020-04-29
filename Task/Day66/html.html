@@ -14,12 +14,19 @@
 			页面添加了<! DOCTYPE html>说明该页面采用了W3C标准，如果不加则页面会根据浏览器自身的解析标准来解析，这可能会导致页面在不同的浏览器呈现出不同的效果
 		</div>
 		<div class="day-css">
-			<h2>HTML5如果不写`<! DOCTYPE html>`，页面还会正常工作么</h2>
-			<div class="heart"></div>
+			<h2>元素竖向的百分比设置是相对容器的高度吗</h2>
+			不是，一般是根据宽度来的，像padding-top,padding-bottom
+			因为高度百分比的话CSS没办法处理，比如子元素的高度设置为200%，那父元素是不是被撑开了，
+			然后父元素变化了，子元素的200%是不是相对又变化了，所以会造成一个死循环，
+			在CSS里面是没办法处理高度百分比的，高度都是auto。
+			如果想要实现等比例的盒子模型，可以通过上面的padding-top,padding-bottom属性来实现。
 		</div>
 		<div class="day-js">
-			<h2>说说你对数据类型转换的理解是什么？类型转换的方法有哪些</h2>
-			https://github.com/forever-z-133/others/issues/134
+			<h2>请解释下什么是cookie隔离？为什么要隔离？如何隔离？</h2>
+			cookie隔离：如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，
+			非常浪费流量，所以不如隔离开。因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，
+			请求头中就不会带有cookie数据，这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。
+			同时这种方式不会将cookie传入Web Server，也减少了Web Server对cookie的处理分析环节，提高了webserver的http请求的解析速度。
 		</div>
 		<div class="day-skill">
 			<h2>最后如果技术面和HR面问你：你还有什么问题吗？你分别会问些什么</h2>
