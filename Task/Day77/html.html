@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第77天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>说说你对HTML5的img标签属性srcset和sizes的理解？都有哪些应用场景</h2>
+			srcset：规定了图片的src候选集;
+			sizes：规定了图片在不同条件下的尺寸取值，根据尺寸取值从srcset中找到对应的图片src；配合srcset属性才能使用；
+		</div>
+		<div class="day-css">
+			<h2>请问display:inline-block在什么时候会显示间隙</h2>
+			在标签中会回车符，回车符相当于空白符，多个连续的空白符会合并成一个空白符，而产生“空白间隙”
+		</div>
+		<div class="day-js">
+			<h2>请快速答出此题的答案并解释：var x, y = 1; x + y = ? </h2>
+			x // => undefined
+			y // => 1
+			x + y // => undefined + 1 => NaN
+			运算符 + 的implicit type conversion规则：
+			
+			若任何一侧是 string 或 object 则两边转换为 string 进行连接
+			否则均转换为 number 并进行相加
+			注意symbol 相加会 throw TypeError
+		</div>
+		<div class="day-skill">
+			<h2>你对web服务器软件有了解吗？都使用过哪些？各有哪些优缺点呢</h2>
+			第一种，本地新建文件夹 -> git init -> git add . -> git commit -m 'xxx' -> git remote add origin xxx -> git push -u origin master
+			第二种，直接git clone xxx（ssh链接）-> git add . -> git commit -m 'xxx' -> git push
+		</div>
+	</body>
+</html>

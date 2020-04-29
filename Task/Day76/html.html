@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第76天</title>
+		<style>
+			.sector {
+				margin: 20px;
+				background: red;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+			}
+
+			@keyframes sector{
+				from {
+					clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+				}
+				25% {
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+				}
+				25.000001% {
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+				}
+				50%{
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+				}
+				50.000001%{
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+				}
+				75%{
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+				}
+				75.000001%{
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+				}
+				to{
+					clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>HTML5如何识别语音读出的内容和朗读指定的内容</h2>
+
+		</div>
+		<div class="day-css">
+			<h2>用CSS画出一个任意角度的扇形，可以写多种实现的方法</h2>
+			<div class="sector"></div>
+		</div>
+		<div class="day-js">
+			<h2>说说instanceof和typeof的实现原理并自己模拟实现一个instanceof </h2>
+			instanceof
+			返回 boolean
+			通过调用 class 的 [Symbol.hasInstance] static method 来判断一个 object 是否是一个 class 的 instance
+			缺省行为：判断 object 的 prototype chain 中是否有任意一个 prototype 与 class 的 prototype 相等
+			<script>
+				function new_instance_of(leftVaule, rightVaule) { 
+					let rightProto = rightVaule.prototype; // 取右表达式的 prototype 值
+					leftVaule = leftVaule.__proto__; // 取左表达式的__proto__值
+					while (true) {
+						if (leftVaule === null) {
+							return false;	
+						}
+						if (leftVaule === rightProto) {
+							return true;	
+						} 
+						leftVaule = leftVaule.__proto__ 
+					}
+				}
+			</script>
+			typeof
+			返回 'string', 'number', 'undefined', 'boolean', 'object', 'function', 'symbol'
+			获取数据底层的类型标签。
+		</div>
+		<div class="day-skill">
+			<h2>你对web服务器软件有了解吗？都使用过哪些？各有哪些优缺点呢</h2>
+			第一种，本地新建文件夹 -> git init -> git add . -> git commit -m 'xxx' -> git remote add origin xxx -> git push -u origin master
+			第二种，直接git clone xxx（ssh链接）-> git add . -> git commit -m 'xxx' -> git push
+		</div>
+	</body>
+</html>
