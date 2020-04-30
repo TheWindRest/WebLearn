@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第78天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>你有用过HTML5中的datalist标签吗？说说你对它的理解</h2>
+			datalist 标签规定了 input 元素可能的选项列表。
+			datalist 标签被用来在为 input 元素提供"自动完成"的特性。用户能看到一个下拉列表，里边的选项是预先定义好的，将作为用户的输入数据。
+			请使用 input 元素的 list 属性来绑定 datalist 元素。
+			<input type="text" list="country" name="country-name">
+			<datalist id="country">
+				<option value="china"></option>
+				<option value="america"></option>
+				<option value="russia"></option>
+			</datalist>
+		</div>
+		<div class="day-css">
+			<h2>遇到overflow: scroll不能平滑滚动怎么解决</h2>
+			ipone 上解决方法是这样的，
+			-webkit-overflow-scrolling: touch;
+		</div>
+		<div class="day-js">
+			<h2>举例说明数组和对象的迭代方法分别有哪些</h2>
+			Array
+			forEach method arr.forEach((val, idx, arr) => { ... }, thisArg)
+			for...of (Symbol.iterator) for (let val of arr) { ... }
+			for...in (Enumerable Keys) for (let key in arr) { ... }
+			Object
+			for...in (Enumerable Keys) for (let key in obj) { ... }
+			Object static method + for...of
+			for (let key of Object.keys(obj)) { ... }
+			for (let [key, val] of Object.entries(obj)) { ... }
+		</div>
+		<div class="day-skill">
+			<h2>你有使用过JWT吗？说说你对它的理解</h2>
+			JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案。服务器认证以后，生成一个 JSON 对象，由客户端保存，每次服务端通信只要是这个json对象就可以。方便服务器拓展。
+			JWT 由三部分组成Header（头部），Payload（负载），Signature（签名）。Header（头部），Payload（负载）都是json对象。Signature 部分是对前两部分的签名。
+			首先，需要指定一个密钥（secret）。这个密钥只有服务器才知道，不能泄露给用户。
+			然后，使用 Header 里面指定的签名算法（默认是 HMAC SHA256），按照下面的公式产生签名。
+			HMACSHA256(
+			base64UrlEncode(header) + "." +
+			base64UrlEncode(payload),
+			secret)
+			算出签名以后，把 Header、Payload、Signature 三个部分拼成一个字符串，每个部分之间用"点"（.）分隔，就可以返回给用户。
+		</div>
+	</body>
+</html>

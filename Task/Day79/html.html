@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第79天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>HTML5的应用程序缓存与浏览器缓存有什么不同</h2>
+			应用程序缓存是 HTML5 的重要特性之一，提供了离线使用的功能，
+			让应用程序可以获取本地的网站内容，例如 HTML、CSS、图片以及 JavaScript。
+			这个特性可以提高网站性能，它的实现借助于 manifest 文件，与传统浏览器缓存相比，
+			它不强制用户访问的网站内容被缓存
+		</div>
+		<div class="day-css">
+			<h2>说说你对BEM规范的理解，同时举例说明常见的CSS规范有哪些</h2>
+			http://luopq.com/2016/01/05/css-optimize/
+		</div>
+		<div class="day-js">
+			<h2>举例说明什么是IIFEs？它有什么好处</h2>
+			IIFE: 立即执行函数
+
+			写法：
+			
+			(function(){
+				 var name = 'shaw';
+			})()
+			好处
+			
+			1.在let、const块级作用域未出来时，我们常常会写出这样的代码
+			<script>
+			for (var i=0;i<10;i++) {
+				 (function(i){
+					  setTimeout(function(){
+						   console.log(i);
+					  }, 100*i);
+				 })(i)
+			}
+			</script>			
+
+			通过立即执行函数来创造一个新的作用域并缓存变量，来解决闭包带来的副作用问题
+			
+			2.模块化
+			
+			由于立即执行函数，不污染外部作用域的原则，因此诞生了umd模块的写法。一般主流的框架都会提供umd格式的js，通过script标签注入页面后会生成唯一一个全局变量，内部变量都不会暴露出来
+		</div>
+		<div class="day-skill">
+			<h2>一个项目写很多的纯静态页面，有公共的部分（例如头和尾）你是怎么提取公用的</h2>
+			iframe：我最开始用的就是这种，方便省事
+			wekpack引入公共模块：${require('html-loader!../../components/header/header.html')}
+			以上两种都是纯前端的。
+		</div>
+	</body>
+</html>
