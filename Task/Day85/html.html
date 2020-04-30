@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第85天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>iframe的使用场景有哪些？</h2>
+			1：典型系统结构，左侧是功能树，右侧就是一些常见的table或者表单之类的。为了每一个功能，单独分离出来，采用iframe。 
+			2：ajax上传文件。 
+			3：加载别的网站内容，例如google广告，网站流量分析。
+			4：在上传图片时，不用flash实现无刷新。
+			5：跨域访问的时候可以用到iframe，使用iframe请求不同域名下的资源
+		</div>
+		<div class="day-css">
+			<h2>怎么让body高度自适应屏幕？为什么</h2>
+			height：100%是相对于父元素来说的，如果只设置body的高度属性，由于其父元素是html高度未设置，
+			且并非浏览器窗口高度，所以只设置body为100%是不能达到效果的，必须html，body都设置100%。
+			而body{height: 100vh}直接把高度设置成了视口高度，与html大小无关，所以只在body设置vh是可行的。
+		</div>
+		<div class="day-js">
+			<h2>请描述你对浏览器同源策略的理解</h2>
+			同源策略是指，某个页面上执行的 AJAX/Fetch 请求只能访问到同域名下的 URL。
+			这是出于安全性考虑，然而在某些需要跨域的场景中，
+			通过在服务端设置 CORS 响应头 Access-Control-Allow-Origin（允许的来源域名）、
+			Access-Control-Allow-Method（允许的 HTTP Method）等，可以响应来自其他域的请求。
+			协议相同
+			端口相同
+			域名相同
+		</div>
+		<div class="day-skill">
+			<h2>刷新和强制刷新有什么区别？说说你对两者的理解</h2>
+			刷新: 若页面之前访问过,可以读取缓存的内容
+			强制刷新: 当前页面不读取缓存的内容,所有的内容必须从服务器获取
+		</div>
+	</body>
+</html>
