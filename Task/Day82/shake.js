@@ -3,7 +3,7 @@ var SHAKE_THRESHOLD = 3000;
 var last_update = 0;
 var num = 0;
 var x = y = z = last_x = last_y = last_z = 0;
-function init() {
+window.onload = function init() {
     if (window.DeviceMotionEvent) {
         window.addEventListener('devicemotion', deviceMotionHandler, false);
     } else {
