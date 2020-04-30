@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第96天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>写出以下几个HTML标签：字体、居中、文字加粗、下标</h2>
+			现在这些标签都有相应的CSS属性进行设置了吧
+			字体：font
+			居中：text-align: center
+			文字加粗：font-weight: bold
+			下标：vertical-align:sub
+		</div>
+		<div class="day-css">
+			<h2>行内css和important哪个优先级高</h2>
+			!important 将覆盖行内css
+			css优先级：行内css>id选择器(#)>伪类(:)>属性选择器([])>类选择器(.) > 类型选择器(div p a等) > 通用选择器(*)
+		</div>
+		<div class="day-js">
+			<h2>要实现一个js的持续动画，你有什么比较好的方法</h2>
+			requestAnimationFrame，浏览器专门为js动画提供的API。
+			https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame
+		</div>
+		<div class="day-skill">
+			<h2>你知道什么是图片防盗链吗？防盗链怎么实现呢？说说你的方法</h2>
+			盗链 是指在自己的页面上展示一些并不在自己服务器上的内容。通常的做法是通过技术手段获得它人服务器上的资源地址，绕过别人的资源展示页面，直接在自己的页面上向最终用户提供此内容。
+
+			防盗链 就是防止盗链。
+			
+			在 http 协议中，如果从一个页面跳到另一个页面，header 字段里面会带个 Referer。图片服务器通过检测 Referer 是否来自规定域名，来进行防盗链。
+		</div>
+	</body>
+</html>
