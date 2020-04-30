@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第90天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>举例说明你对ol和ul标签的区别？它们的运用场景分别是什么呢</h2>
+			ul有序列表、ol无序列表；
+			两个符号都可以修改、也可以改成图片，但是type支持的类型不一样；
+			还有个dl自定义列表。
+		</div>
+		<div class="day-css">
+			<h2>CSS的overflow属性定义溢出元素内容区的内容会如何处理呢</h2>
+			visible（默认值）：溢出的内容会照常显示在元素内容区之外；
+			hidden：溢出的内容会被裁剪；
+			scroll：溢出的内容会出现在滚动区，通过滚动条滚动可以看到；
+			auto：当内容溢出时表现同scroll；
+		</div>
+		<div class="day-js">
+			<h2>写个方法随机打乱一个数组 </h2>
+			<script>
+				var arr = [1, 2, 3, 4, 5, 6, 7];
+				function getRandomArr(arr)
+				{
+					let i = arr.length, index;
+					while(i)
+					{
+						index = Math.floor(Math.random() * i--);
+						[arr[i], arr[index]] = [arr[index], arr[i]];
+					}
+					return arr;
+				}
+				console.log(getRandomArr(arr));
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>说说你对robots文件的理解，它有什么作用</h2>
+			hosts 文件可以将名称映射到 IP 地址。
+			在本机上所有对这个名称的访问相当于对它被映射到的 IP 地址的访问。可以说它起到了简易的本地 DNS 的作用。
+		</div>
+	</body>
+</html>

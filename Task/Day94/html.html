@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第94天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>使用HTML5需要遵守哪些设计原则</h2>
+			避免不必要的复杂性
+			支持已有内容			
+			解决现实的问题			
+			内容模型			
+			平稳退化
+		</div>
+		<div class="day-css">
+			<h2>为什么会出现浮动？在什么时候需要清除浮动呢</h2>
+			因为在 div + css 代替 table 布局之后，利用 float 很容易进行一些自适应的布局，
+			比如双飞燕和圣杯布局。当然，float 原本的用途就是用来进行文字环绕图片的，当有此需求时，应该使用 float
+			但是使用 float 之后，由于内部的元素脱离了文档流导致外层包裹元素高度塌陷。此时就需要清除 float 造成的影响。一般使用 clear:both 或者外层触发 BFC。
+		</div>
+		<div class="day-js">
+			<h2>用js写出死循环的方法有哪些</h2>
+			while (true) {
+			}
+			for (;;) {
+			}
+		</div>
+		<div class="day-skill">
+			<h2>说说你对emoji表情的理解，前端如何处理emoji表情？它的运用场景有哪些</h2>
+			emoji表情实际上就是Unicode字符，通过各个系统的底层将其转化为对应的表情图像；因此，每个系统的emoji表情实现都可以各不相同。
+
+			至于应用场景，虽然是字符，但由于图像化，所以表达的意思更加丰富，多用于聊天或网络社交，言简意赅。
+		</div>
+	</body>
+</html>

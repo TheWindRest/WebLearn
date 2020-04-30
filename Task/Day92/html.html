@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第92天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+			@media screen and (max-width:768px) {
+				body {
+						background: red;
+				}
+			}
+
+			@media screen and (min-width:768px) {
+				body {
+					background: green;
+				}
+			}
+
+			@media screen and (min-width:992px) {
+				body {
+					background: blue;
+				}
+			}
+
+			@media screen and (min-width:1200px) {
+				body {
+					background: gray;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>请说说你对ISISO8859-2字符集的认识 </h2>
+			iso8859是一系列的字符标准,iso8859-2在1的基础之上收集了东欧字符;
+		</div>
+		<div class="day-css">
+			<h2>移动端的布局用过媒体查询吗？写出例子看看</h2>
+		</div>
+		<div class="day-js">
+			<h2>解释下为什么{} + [] === 0为true </h2>
+			{} 认定是语法块
+			这个放在前面，只有混淆作用，并不参与运算。
+			+[] 类型转换 0
+			0===0；
+			不再赘述
+		</div>
+		<div class="day-skill">
+			<h2>浏览器在什么情况下会出现“已拦截弹窗式窗口”？怎么解决</h2>
+			已拦截弹窗式窗口出现的原因是你想打开一个页面，但是这个页面并不是通过你的点击事件实现，而是已其他方式出现的。
+			使用模拟点击事件，
+		</div>
+	</body>
+</html>

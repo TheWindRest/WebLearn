@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第95天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>HTML5标准提供了哪些新的API？你有用过哪些</h2>
+			两个选择器API
+			document.querySelector()
+			document.querySelectAll()
+			地理定位API
+			getCurrrentPosition()
+			多媒体API
+			<video></video>
+			<audio></audio>
+			拖放
+			<div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div draggable="true" ondragstart="drag(event)"></div>
+			文件
+			window.requestFileSystem()
+			XHR2
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "@Url.Action("Upload")")
+			本地存储API
+			localStorage
+			sessionStorage
+			canvas
+			<canvas id="myCanvas" width="200" height="100">
+			svg
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			   <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+			</svg>
+
+			cookie：是网景公司的前雇员在1993年发明。它的主要用于保存登陆信息，比如登陆某个网站市场可以看到'记住密码’，这就是通过在cookie中存入一段辨别用户身份的数据来实现的。
+
+			sessionStorage：会话，是可以将一部分数据在当前会话中保存下来，刷新页面数据依旧存在。但是页面关闭后，sessionStorage中的数据就会被清空。
+			
+			localStorage：是HTML5标准中新加入的技术，当然早在IE6时代就有一个userData的东西用于本地存储，而当时考虑到浏览器的兼容性，更通用的方案是使用flash。如今localStorage被大多数浏览器所支持。
+
+		</div>
+		<div class="day-css">
+			<h2>当一个元素被设置为浮动后，它的display值变为什么呢</h2>
+			凡是position:absolute或float:left/right，浏览器自动把元素转化为inline-block;
+		</div>
+		<div class="day-js">
+			<h2>分别写出数组的交集、并集、差集、补集这四个方法</h2>
+			<script>
+				var arr1 = [1, 2, 3, 4, 5, 6, 7];
+				var arr2 = [5, 6, 7, 8, 9, 10, 11];
+				const intersect = (a, b) => a.filter(i => b.includes(i)) // 交
+				const exclude = (a, b) => a.filter(i => !b.includes(i)) // 差
+				const union = (a, b) => exclude(a, b).concat(b) // 并
+				const unionAll = (a, b) => a.concat(b) // 重复并
+				const xor = (a, b) => exclude(a, b).concat(exclude(b, a)) // 补
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>说说你对emoji表情的理解，前端如何处理emoji表情？它的运用场景有哪些</h2>
+			emoji表情实际上就是Unicode字符，通过各个系统的底层将其转化为对应的表情图像；因此，每个系统的emoji表情实现都可以各不相同。
+
+			至于应用场景，虽然是字符，但由于图像化，所以表达的意思更加丰富，多用于聊天或网络社交，言简意赅。
+		</div>
+	</body>
+</html>

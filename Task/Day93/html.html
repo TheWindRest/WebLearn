@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第93天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+			.box {
+				display:flex;
+				height: 100px;
+				flex-flow: row nowarp;
+				justify-content: center; 
+				align-items: center;
+				background-color: gray;
+			}
+			.child {
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>有使用过svg吗？请用svg画一个圆</h2>
+			<svg width="50" height="50">
+				<circle cx="25" cy="25" r="10" fill="black" />
+			</svg>
+		</div>
+		<div class="day-css">
+			<h2>写出div在不固定高度的情况下水平垂直居中的方法</h2>
+			<div class="box">
+				<div class="child">child</div>
+			</div>
+		</div>
+		<div class="day-js">
+			<h2>js的函数有哪几种调用形式</h2>
+			直接调用，call, apply, bind, 自调用 (function())();
+		</div>
+		<div class="day-skill">
+			<h2>浏览器在什么情况下会出现“已拦截弹窗式窗口”？怎么解决</h2>
+			已拦截弹窗式窗口出现的原因是你想打开一个页面，但是这个页面并不是通过你的点击事件实现，而是已其他方式出现的。
+			使用模拟点击事件，
+		</div>
+	</body>
+</html>
