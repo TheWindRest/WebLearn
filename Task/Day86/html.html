@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第86天</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>举例说明你对HTML5的ruby标签的理解，都有哪些应用场景</h2>
+			标签定义 ruby 注释（中文注音或字符）。
+			ruby 元素由一个或多个字符（需要一个解释/发音）和一个提供该信息的 rt 元素组成，
+			还包括可选的 rp 元素，定义当浏览器不支持 "ruby" 元素时显示的内容。 (摘自博客)
+			<ruby><rb>呵呵</rb><rt>sha bi</rt></ruby>
+		</div>
+		<div class="day-css">
+			<h2>display有哪些值？分别说明他们的作用是什么</h2>
+			https://developer.mozilla.org/zh-CN/docs/Web/CSS/display
+			block
+			none
+			inline-block
+			initial
+			table
+			inline
+			flex
+			grid
+		</div>
+		<div class="day-js">
+			<h2>把Script标签放在页面最底部的/body之前和之后有什么区别？浏览器会如何解析它们？</h2>
+			HTML 2.0起放在“body标签闭合之后”就是不合标准的。
+			之所以但是浏览器却不会报错，是因为如果在“body标签闭合之后”后再出现script或任何元素的开始标签，
+			都是parse error，浏览器会忽略之前的，即视作仍旧在body内。
+			所以实际效果和写在“body标签闭合之前”之前是没有区别的。所以要么放head标签里，要么放 /body 之前。
+		</div>
+		<div class="day-skill">
+			<h2>Git的reset和revert有什么区别？它们分别适用于什么场景</h2>
+			git reset的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本
+			如果想恢复到之前某个提交的版本，且那个版本之后提交的版本我们都不要了，就可以用这种方法
+			
+			git revert的作用通过反做创建一个新的版本
+			如果我们想恢复之前的某一版本（该版本不是merge类型），但是又想保留该目标版本后面的版本，记录下这整个版本变动流程，就可以用这种方法。（摘自博客）
+		</div>
+	</body>
+</html>

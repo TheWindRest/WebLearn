@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第88天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">		
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5FByQN077QYRzOYf4C86G1ZkH67pm5iP"></script>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>怎么使用HTML5来获取定位？定位不准怎么解决？</h2>
+			纯HTML5 Geolocation定位能力弱，定位成功率不高
+			通常使用 高德/百度/腾讯 现成的定位功能
+			<div id="allmap" style="width: 100%;height: 500px;"></div>
+			<script type="text/javascript">
+				// 百度地图API功能
+				var map = new BMap.Map("allmap");
+				var point = new BMap.Point(108.95,34.27);
+				map.centerAndZoom(point,12);			 
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(function(r){
+					console.log(r.point)
+					if(this.getStatus() == BMAP_STATUS_SUCCESS){
+						var mk = new BMap.Marker(r.point);
+						map.addOverlay(mk);//标出所在地
+						map.panTo(r.point);//地图中心移动
+						//alert('您的位置：'+r.point.lng+','+r.point.lat);
+						var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
+						var gc = new BMap.Geocoder();
+						gc.getLocation(point, function(rs){
+						   var addComp = rs.addressComponents; 
+						   console.log(rs.address);//地址信息
+						   alert(rs.address);//弹出所在地址			 
+						});
+					}else {
+						alert('failed'+this.getStatus());
+					}        
+				},{enableHighAccuracy: true})
+			</script>			
+		</div>
+		<div class="day-css">
+			<h2>写出几个初始化CSS的样式，并解释说明为什么要这样写</h2>
+			引用css初始化库，如；
+			normalize.css
+			
+			因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异
+			2.初始化CSS样式可以提高编码质量，保持代码的统一性，如果不初始化，重复的CSS样式很多。
+		</div>
+		<div class="day-js">
+			<h2>请写一个sleep（暂停）函数</h2>
+			不要写同步的暂停函数。它会让你的程序卡死。
+			写一个异步的暂停函数，这样可以在任何 async function 中暂停，且只暂停这一部分代码。
+			<script type="text/TypeScript">
+				function sleep(milliseconds: number) {
+					return new Promise<void>(resolve =>
+						setTimeout(resolve, milliseconds))
+				}
+				void async function main() {
+					// … do something …
+					await sleep(5000)
+					// … do something else …
+				}()
+			</script>
+		</div>
+		<div class="day-skill">
+			<h2>Git的reset和revert有什么区别？它们分别适用于什么场景</h2>
+			git reset的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本
+			如果想恢复到之前某个提交的版本，且那个版本之后提交的版本我们都不要了，就可以用这种方法
+			
+			git revert的作用通过反做创建一个新的版本
+			如果我们想恢复之前的某一版本（该版本不是merge类型），但是又想保留该目标版本后面的版本，记录下这整个版本变动流程，就可以用这种方法。（摘自博客）
+		</div>
+	</body>
+</html>
