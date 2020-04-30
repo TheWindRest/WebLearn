@@ -20,9 +20,9 @@ function deviceMotionHandler(eventData) {
         y = acceleration.y;
         z = acceleration.z;
         var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
-
+        alert("摇动了");
         if (speed > SHAKE_THRESHOLD) {
-            alert("摇动了");
+            //alert("摇动了");
             handelShakingMotion();
         }
         last_x = x;
