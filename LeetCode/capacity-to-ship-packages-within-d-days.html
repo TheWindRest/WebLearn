@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capacity-to-ship-packages-within-d-days</title>
+</head>
+<body>
+    <a href="https://github.com/azl397985856/leetcode/blob/master/problems/1011.capacity-to-ship-packages-within-d-days.md">1011</a>
+    <script>
+        var shipWithinDays = function(weights, D) {
+            let high = weights.reduce((acc, cur) => acc + cur)
+            let low = 0
+
+            while(low < high) 
+            {
+                let mid = Math.floor((high + low) / 2)
+                if (canShip(mid)) 
+                {
+                    high = mid
+                } else 
+                {
+                    low = mid + 1
+                }
+            }
+
+            return low
+
+            function canShip(opacity) 
+            {
+                let remain = opacity
+                let count = 1
+                for (let weight of weights) 
+                {
+                    if (weight > opacity)
+                    {
+                        return false
+                    }
+                    remain -= weight
+                    if (remain < 0) 
+                    {
+                        count++
+                        remain = opacity - weight
+                    }
+                    if (count > D) 
+                    {
+                        return false
+                    }
+                }
+                return count <= D
+            }
+        };
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        console.log(shipWithinDays(arr, 5));
+    </script>
+</body>
+</html>
