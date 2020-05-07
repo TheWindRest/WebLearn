@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第97天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>Doctype有什么作用？你知道有多少种Doctype文档类型吗</h2>
+			1、Doctype的作用 
+			文档类型声明，作用是防止浏览器在渲染html文档时，切换到我们称之为怪异模式（兼容模式）的渲染模式。
+			2、Doctype文档类型的种类
+			（1）在HTML 4.01和XML中有三种<!DOCTYPE> 声明
+				Strict是不包括展示性和废弃的属性 以及框架集framset
+				transitional 包括展示性和废弃属性 不包含框架集
+				framset 在transitional 基础上包括框架集
+			（2）在 HTML5 中只有一种：
+				!DOCTYPE html
+				在 HTML5中，DOCTYPE 唯一的作用是启用标准模式。更早期的 HTML 标准会附加其他意义，
+				但没有任何浏览器会将 DOCTYPE 用于怪异模式和标准模式之间互换以外的用途。
+			3、注意！
+			（1）位置必须放在文档顶端，任何放在 DOCTYPE 前面的东西，比如批注或 XML 声明，会令 IE9 或更早期的浏览器触发怪异模式。
+			（2）DOCTYPE不是HTML标签，它是一个它是浏览器模式渲染的指令，更没有结束标签。
+			（3）<!DOCTYPE> 声明对大小写不敏感。
+		</div>
+		<div class="day-css">
+			<h2>如何更改placeholder的字体颜色和大小</h2>
+			/*chrome*/
+			::-webkit-input-placeholder{
+				font-size:15px;
+				color:red;
+			}
+			
+			/*firefox*/
+			::-moz-placeholder
+			{
+				color:green
+			}
+			
+			/*IE*/
+			::ms-input-placeholder
+			{
+				color:black
+			}
+		</div>
+		<div class="day-js">
+			<h2>写例子说明如何给li绑定事件（ul下有1000+个li）</h2>
+			document.getElementsByTag('ul')[0].addEventListener('event', (e) => {
+				// 利用 e.target 对冒泡上来的元素做区分
+				// e.target.nodeName, e.target.id 等
+			})
+		</div>
+		<div class="day-skill">
+			<h2>你知道什么是图片防盗链吗？防盗链怎么实现呢？说说你的方法</h2>
+			盗链 是指在自己的页面上展示一些并不在自己服务器上的内容。通常的做法是通过技术手段获得它人服务器上的资源地址，绕过别人的资源展示页面，直接在自己的页面上向最终用户提供此内容。
+
+			防盗链 就是防止盗链。
+			
+			在 http 协议中，如果从一个页面跳到另一个页面，header 字段里面会带个 Referer。图片服务器通过检测 Referer 是否来自规定域名，来进行防盗链。
+		</div>
+	</body>
+</html>
