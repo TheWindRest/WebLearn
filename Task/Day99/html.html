@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>第99天</title>
+		<link rel="stylesheet" href="../../css/normalize.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="day-html">
+			<h2>HTML5的页面可见性（Page Visibility）有哪些应用场景</h2>
+			<script>
+				document.addEventListener('visibilitychange',  ()=> {
+					// 用户当前页面不可见（离开或者后端或者最小化，或者页签切换）
+					if (document.visibilityState === 'hidden') {
+					document.title = '看不见我(T_T)';
+					}
+				
+					// 用户打开或回到页面
+					if (document.visibilityState === 'visible') {
+					document.title = '又见到你了~~~///(^v^)\\\~~~';
+					}
+				});
+			</script>
+		</div>
+		<div class="day-css">
+			<h2>你对视网膜(Retina)分辨率有了解吗？有没有在实际中使用过</h2>
+			Retina分辨率指的是屏幕的物理分辨率达到了使得人眼难以看到单个物理像素；
+			具体应用应该就是dpr > 1的屏幕适配，需要根据不同dpr给出合适尺寸的图片；
+		</div>
+		<div class="day-js">
+			<h2>不用第三方库，说说纯js怎么实现读取和导出excel</h2>
+			同步就是上一个任务结束下一个任务再开始，比如alert弹窗，你不点击确定他就会阻塞后边代码的执行；
+			异步就是按顺序开始（不可能同时开始）但是不一定按顺序结束，比如图片的加载就是走的异步。
+		</div>
+		<div class="day-skill">
+			<h2>你有用过单例模式吗？主要运用场景有哪些</h2>
+
+		</div>
+	</body>
+</html>
