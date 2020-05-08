@@ -7,18 +7,9 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1576261_5ykx69n9ocw.css">
     <script src="js/vue.js"></script>
     <title>CSSLearn</title>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?05a2292a20feb9a025e938bb43a25810";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <div class="project" v-for="project in projects" v-bind:style="{backgroundImage: 'url(' + getImagePath(project.name) + ')'}">
             <div class="actions">
                 <a class="action" target="_blank" v-bind:href="getPagePath(project.name)">
@@ -34,5 +25,14 @@
         </div>
     </div>
     <script src="js/app.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?05a2292a20feb9a025e938bb43a25810";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </body>
 </html>

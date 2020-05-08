@@ -22,7 +22,11 @@ var app = new Vue({
     },
     methods: {
         getImagePath(pathName) {
-            
+            return 'https://raw.githubusercontent.com/TheWindRest/WebLearn/master/CSSLearn/' + pathName + '/image/profile.png';
+        },
+        getPagePath(pathName)
+        {
+            return "https://thewindrest.github.io/WebLearn/CSSLearn/"+ pathName + '/index.html';
         }
     }
 })
