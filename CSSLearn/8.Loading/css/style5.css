@@ -1,0 +1,14 @@
+.loading5 .wrapper {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    flex-flow: row wrap;
+    transform: translateX(90px) translateY(90px);
+}
+
+.loading5 .wrapper .item {
+    width: 36px;
+    height: 36px;
+    background-color: crimson;
+    font-size: 0;
+}
