@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最佳观光组合</title>
+</head>
+<body>
+    <a href="https://github.com/azl397985856/leetcode/blob/master/problems/1014.best-sightseeing-pair.md">1014</a>
+    <script>
+        var arr = [8, 1, 5, 2, 6, 2, 4, 6, 9];
+        function getBestSightPair1(arr)
+        {
+            let score = 0;
+            for(let i = 0; i < arr.length; i++)
+            {
+                for(let j = i + 1; j < arr.length; j++)
+                {
+                    score = Math.max(score, arr[i] + arr[j] + i - j);
+                }
+            }
+            return score
+        }
+        function getBestSightPair2(arr)
+        {
+            let score = 0;
+            let maxI = 0;
+            for(let i = 0; i < arr.length; i++)
+            {
+                score = Math.max(score, maxI + arr[i] - i);
+                maxI = Math.max(maxI, arr[i] + i)
+            }
+            return score
+        }
+        console.log(getBestSightPair1(arr));
+        console.log(getBestSightPair2(arr));
+    </script>
+</body>
+</html>
