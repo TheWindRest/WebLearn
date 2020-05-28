@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message1}} <br>
+        {{reverseMessage}} <br>
+        <span v-bind:title="message2">哈哈哈</span>
+        <p v-if="seen">现在你看到我了</p>
+        <ol>
+            <li v-for="todo in todos">{{todo.text}}</li>
+        </ol>
+        <ul>
+            <todo-item
+                v-for="item in todos"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+            ></todo-item>
+        </ul>
+        <button v-on:click="getReverseMessage">反转消息</button>
+        <input type="text" v-model="message1">
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template:'<li>{{todo.text}}</li>'
+        })
+
+        var app = new Vue({
+            el:'#app',
+            data: {
+                message1: 'hello world!',
+                message2: '页面加载于' + new Date().toLocaleString(),
+                seen: true,
+                todos: [
+                    {id:0, text: '学习  Javascript'},
+                    {id:1, text: '学习  Vue'},
+                    {id:2, text: '学习  和的达瓦'},
+                ]
+            },
+            computed: {
+                reverseMessage: function() {
+                    return this.message1.split('').reverse().join('');
+                }
+            },
+            methods: {
+                getReverseMessage : function() {
+                    this.message1 = this.message1.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
